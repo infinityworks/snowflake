@@ -7,8 +7,10 @@ import Track from '../components/Track'
 import { eligibleTitles, trackIds, milestones, milestoneToPoints } from '../constants'
 import type { Milestone, MilestoneMap, TrackId } from '../constants'
 import React from 'react'
-import TitleSelector from '../components/TitleSelector'
+import TitleDisplay from '../components/TitleDisplay'
 import Helmet from 'react-helmet'
+import Header from './Header';
+import Footer from './Footer';
 
 
 type SnowflakeAppState = {
@@ -116,48 +118,25 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
           <link href="/static/css/main/core.css" rel="stylesheet" type="text/css" />
         </Helmet>
 
-        <header id="header" class="site-header nav-dark">
-          <div class="container">
-            <div class="row">
-              <div class="col bpxxs-col-12 bps-col-3 bpm-off-col-0 bpm-col-3 bpl-off-col-1 bpl-col-3">
-                <div class="site-header__logo">
-                  <a class="site-header__link" href="/">
-                    <h1 class="h2 site-header__logo">Infinity Works</h1>
-                  </a>
-                </div>
-              </div>
-
-              {/* <div class="col bps-col-3 bpm-off-col-0 bpm-col-3 bpl-off-col-1 bpl-col-3">
-                <input
-                    type="text"
-                    className="name-input"
-                    value={this.state.name}
-                    onChange={e => this.setState({ name: e.target.value })}
-                    placeholder="Name"
-                  />
-              </div> */}
-
-            </div>
-          </div>
-        </header>
+        <Header />
 
         <div id="main-content" style={{height:1200}}>
           <section id="section2" class="section2__container">
             <div class="container" >
-              <div class="row section2">
-                <div style={{ paddingTop: 70 }}>
-                  <div>
-                    <TitleSelector
-                      milestoneByTrack={this.state.milestoneByTrack}
-                      currentTitle={this.state.title}
-                      setTitleFn={(title) => this.setTitle(title)} />
-                  </div>
-                  <div>
-                    <NightingaleChart
-                      milestoneByTrack={this.state.milestoneByTrack}
-                      focusedTrackId={this.state.focusedTrackId}
-                      handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
-                  </div>
+              <div class="row section2" style={{ paddingTop: 80, marginLeft: 25 }}>
+
+                <div class="col bpxxs-col-12 bps-col-3 bpm-off-col-0 bpm-col-3 bpl-off-col-1 bpl-col-3">
+                  <TitleDisplay
+                    milestoneByTrack={this.state.milestoneByTrack}
+                    currentTitle={this.state.title}
+                    setTitleFn={(title) => this.setTitle(title)} />
+                </div>
+
+                <div class="col bpxxs-col-12 bps-col-3 bpm-off-col-0 bpm-col-3 bpl-off-col-1 bpl-col-3">
+                  <NightingaleChart
+                    milestoneByTrack={this.state.milestoneByTrack}
+                    focusedTrackId={this.state.focusedTrackId}
+                    handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
                 </div>
 
                 <TrackSelector
@@ -178,20 +157,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
           </section>
         </div>
 
-        <footer class="site-footer">
-            <div class="container group">
-              <div class="row no-bp-clear-2 bpxxs-clear-2 bpxs-clear-3 bpm-clear-6">
-                            <div class="col no-bp-col-6 bpxs-col-4 bpm-off-col-1 bpm-col-2 ">
-                              <p>
-                                <span class="bold">Leeds (Head Office)</span>
-                                Apsley House,
-                                78 Wellington Street,
-                                Leeds LS1 2EQ
-                              </p>
-                            </div>
-              </div>
-            </div>
-        </footer>
+        <Footer/>
       </main>
     )
   }
