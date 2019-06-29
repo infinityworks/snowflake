@@ -1,0 +1,109 @@
+/*! Copyright Thompson Brand Partners | All rights reserved | thompsonbrandpartners.com */
+
+*,
+body,
+figure {
+    margin: 0
+}
+
+*,
+legend {
+    padding: 0
+}
+
+.content-block:after,
+.group:after,
+.row--condense:after,
+.row:after {
+    clear: both
+}
+
+*,
+img,
+legend {
+    border: 0
+}
+
+.content-block:after,
+.content-block:before,
+.row--condense:after,
+.row--condense:before,
+.row:after,
+.row:before {
+    content: " ";
+    display: table
+}
+
+.container,
+cite,
+img {
+    display: block
+}
+
+.content-block {
+    padding: 30px 0;
+    background-color: #fff
+}
+
+.content-block .content-block__row {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px
+}
+
+.content-block .content-block__row img {
+    max-width: 150px;
+    margin: 0 auto 15px;
+    width: 100%
+}
+
+@media only screen and (min-width:30em) {
+    .content-block .content-block__row img {
+        max-width: 200px
+    }
+    .content-block .content-block__row:nth-child(even) .image {
+        -webkit-order: 2;
+        order: 2;
+        float: right
+    }
+}
+
+@media only screen and (min-width:37.5em) {
+    
+    .content-block .content-block__row {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center
+    }
+    .content-block .content-block__row img {
+        max-width: 300px
+    }
+}
+
+}
+
+img.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+}
+
+.content-block.meth{
+    background: #efefef;
+    padding: 5%;
+    min-height: 5vh;
+}
+
+.content-block.meth p{
+font-size: 1em;
+}
+
+.mobilenav{
+    display: none;
+}
+
+
+

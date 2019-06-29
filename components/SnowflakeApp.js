@@ -4,13 +4,12 @@ import TrackSelector from '../components/TrackSelector'
 import NightingaleChart from '../components/NightingaleChart'
 import KeyboardListener from '../components/KeyboardListener'
 import Track from '../components/Track'
-import Wordmark from '../components/Wordmark'
-import LevelThermometer from '../components/LevelThermometer'
 import { eligibleTitles, trackIds, milestones, milestoneToPoints } from '../constants'
-import PointSummaries from '../components/PointSummaries'
 import type { Milestone, MilestoneMap, TrackId } from '../constants'
 import React from 'react'
 import TitleSelector from '../components/TitleSelector'
+import Helmet from 'react-helmet'
+
 
 type SnowflakeAppState = {
   milestoneByTrack: MilestoneMap,
@@ -34,7 +33,7 @@ const hashToState = (hash: String): ?SnowflakeAppState => {
 
 const coerceMilestone = (value: number): Milestone => {
   // HACK I know this is goofy but i'm dealing with flow typing
-  switch(value) {
+  switch (value) {
     case 0: return 0
     case 1: return 1
     case 2: return 2
@@ -50,50 +49,30 @@ const emptyState = (): SnowflakeAppState => {
     name: '',
     title: '',
     milestoneByTrack: {
-      'MOBILE': 0,
-      'WEB_CLIENT': 0,
-      'FOUNDATIONS': 0,
-      'SERVERS': 0,
-      'PROJECT_MANAGEMENT': 0,
-      'COMMUNICATION': 0,
-      'CRAFT': 0,
-      'INITIATIVE': 0,
-      'CAREER_DEVELOPMENT': 0,
-      'ORG_DESIGN': 0,
-      'WELLBEING': 0,
-      'ACCOMPLISHMENT': 0,
-      'MENTORSHIP': 0,
-      'EVANGELISM': 0,
-      'RECRUITING': 0,
-      'COMMUNITY': 0
+      'COMM_PERSONAL': 0,
+      'PROB_CRIT': 0,
+      'LEAD_PER_EFF': 0,
+      'COMM_FINANCE': 0,
+      'ADAPT_RESIL': 0,
+      'CREATIVITY_INNO': 0
     },
-    focusedTrackId: 'MOBILE'
+    focusedTrackId: 'COMM_PERSONAL'
   }
 }
 
 const defaultState = (): SnowflakeAppState => {
   return {
-    name: 'Cersei Lannister',
-    title: 'Staff Engineer',
+    name: 'Tamas Infinite',
+    title: 'Senior Consultant',
     milestoneByTrack: {
-      'MOBILE': 1,
-      'WEB_CLIENT': 2,
-      'FOUNDATIONS': 3,
-      'SERVERS': 2,
-      'PROJECT_MANAGEMENT': 4,
-      'COMMUNICATION': 1,
-      'CRAFT': 1,
-      'INITIATIVE': 4,
-      'CAREER_DEVELOPMENT': 3,
-      'ORG_DESIGN': 2,
-      'WELLBEING': 0,
-      'ACCOMPLISHMENT': 4,
-      'MENTORSHIP': 2,
-      'EVANGELISM': 2,
-      'RECRUITING': 3,
-      'COMMUNITY': 0
+      'COMM_PERSONAL': 1,
+      'PROB_CRIT': 3,
+      'LEAD_PER_EFF': 3,
+      'COMM_FINANCE': 3,
+      'ADAPT_RESIL': 4,
+      'CREATIVITY_INNO': 2
     },
-    focusedTrackId: 'MOBILE'
+    focusedTrackId: 'COMM_PERSONAL'
   }
 }
 
@@ -128,84 +107,91 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
   render() {
     return (
       <main>
-        <style jsx global>{`
-          body {
-            font-family: Helvetica;
-          }
-          main {
-            width: 960px;
-            margin: 0 auto;
-          }
-          .name-input {
-            border: none;
-            display: block;
-            border-bottom: 2px solid #fff;
-            font-size: 30px;
-            line-height: 40px;
-            font-weight: bold;
-            width: 380px;
-            margin-bottom: 10px;
-          }
-          .name-input:hover, .name-input:focus {
-            border-bottom: 2px solid #ccc;
-            outline: 0;
-          }
-          a {
-            color: #888;
-            text-decoration: none;
-          }
-        `}</style>
-        <div style={{margin: '19px auto 0', width: 142}}>
-          <a href="https://medium.com/" target="_blank">
-            <Wordmark />
-          </a>
-        </div>
-        <div style={{display: 'flex'}}>
-          <div style={{flex: 1}}>
-            <form>
-              <input
-                  type="text"
-                  className="name-input"
-                  value={this.state.name}
-                  onChange={e => this.setState({name: e.target.value})}
-                  placeholder="Name"
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>IW Snowflake v0.1</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+          <link rel="icon" type="image/png" href="/static/favicon.ico" />
+          <link href="/static/css/print/print.css" rel="stylesheet" media="print" type="text/css" />
+          <link href="/static/css/main/core.css" rel="stylesheet" type="text/css" />
+        </Helmet>
+
+        <header id="header" class="site-header nav-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col bpxxs-col-12 bps-col-3 bpm-off-col-0 bpm-col-3 bpl-off-col-1 bpl-col-3">
+                <div class="site-header__logo">
+                  <a class="site-header__link" href="/">
+                    <h1 class="h2 site-header__logo">Infinity Works</h1>
+                  </a>
+                </div>
+              </div>
+
+              {/* <div class="col bps-col-3 bpm-off-col-0 bpm-col-3 bpl-off-col-1 bpl-col-3">
+                <input
+                    type="text"
+                    className="name-input"
+                    value={this.state.name}
+                    onChange={e => this.setState({ name: e.target.value })}
+                    placeholder="Name"
                   />
-              <TitleSelector
+              </div> */}
+
+            </div>
+          </div>
+        </header>
+
+        <div id="main-content" style={{height:1200}}>
+          <section id="section2" class="section2__container">
+            <div class="container" >
+              <div class="row section2">
+                <div style={{ paddingTop: 70 }}>
+                  <div>
+                    <TitleSelector
+                      milestoneByTrack={this.state.milestoneByTrack}
+                      currentTitle={this.state.title}
+                      setTitleFn={(title) => this.setTitle(title)} />
+                  </div>
+                  <div>
+                    <NightingaleChart
+                      milestoneByTrack={this.state.milestoneByTrack}
+                      focusedTrackId={this.state.focusedTrackId}
+                      handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
+                  </div>
+                </div>
+
+                <TrackSelector
                   milestoneByTrack={this.state.milestoneByTrack}
-                  currentTitle={this.state.title}
-                  setTitleFn={(title) => this.setTitle(title)} />
-            </form>
-            <PointSummaries milestoneByTrack={this.state.milestoneByTrack} />
-            <LevelThermometer milestoneByTrack={this.state.milestoneByTrack} />
-          </div>
-          <div style={{flex: 0}}>
-            <NightingaleChart
-                milestoneByTrack={this.state.milestoneByTrack}
-                focusedTrackId={this.state.focusedTrackId}
-                handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
-          </div>
+                  focusedTrackId={this.state.focusedTrackId}
+                  setFocusedTrackIdFn={this.setFocusedTrackId.bind(this)} />
+                <KeyboardListener
+                  selectNextTrackFn={this.shiftFocusedTrack.bind(this, 1)}
+                  selectPrevTrackFn={this.shiftFocusedTrack.bind(this, -1)}
+                  increaseFocusedMilestoneFn={this.shiftFocusedTrackMilestoneByDelta.bind(this, 1)}
+                  decreaseFocusedMilestoneFn={this.shiftFocusedTrackMilestoneByDelta.bind(this, -1)} />
+                <Track
+                  milestoneByTrack={this.state.milestoneByTrack}
+                  trackId={this.state.focusedTrackId}
+                  handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
+              </div>
+            </div>
+          </section>
         </div>
-        <TrackSelector
-            milestoneByTrack={this.state.milestoneByTrack}
-            focusedTrackId={this.state.focusedTrackId}
-            setFocusedTrackIdFn={this.setFocusedTrackId.bind(this)} />
-        <KeyboardListener
-            selectNextTrackFn={this.shiftFocusedTrack.bind(this, 1)}
-            selectPrevTrackFn={this.shiftFocusedTrack.bind(this, -1)}
-            increaseFocusedMilestoneFn={this.shiftFocusedTrackMilestoneByDelta.bind(this, 1)}
-            decreaseFocusedMilestoneFn={this.shiftFocusedTrackMilestoneByDelta.bind(this, -1)} />
-        <Track
-            milestoneByTrack={this.state.milestoneByTrack}
-            trackId={this.state.focusedTrackId}
-            handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
-        <div style={{display: 'flex', paddingBottom: '20px'}}>
-          <div style={{flex: 1}}>
-            Made with ❤️ by <a href="https://medium.engineering" target="_blank">Medium Eng</a>.
-            Learn about the <a href="https://medium.com/s/engineering-growth-framework" target="_blank">growth framework</a>.
-            Get the <a href="https://github.com/Medium/snowflake" target="_blank">source code</a>.
-            Read the <a href="https://medium.com/p/85e078bc15b7" target="_blank">terms of service</a>.
-          </div>
-        </div>
+
+        <footer class="site-footer">
+            <div class="container group">
+              <div class="row no-bp-clear-2 bpxxs-clear-2 bpxs-clear-3 bpm-clear-6">
+                            <div class="col no-bp-col-6 bpxs-col-4 bpm-off-col-1 bpm-col-2 ">
+                              <p>
+                                <span class="bold">Leeds (Head Office)</span>
+                                Apsley House,
+                                78 Wellington Street,
+                                Leeds LS1 2EQ
+                              </p>
+                            </div>
+              </div>
+            </div>
+        </footer>
       </main>
     )
   }
