@@ -21,7 +21,9 @@ class Track extends React.Component<Props> {
           div.track {
             margin: 0 0 20px 0;
             padding-bottom: 20px;
+            padding-top: 20px;
             border-bottom: 2px solid #ccc;
+            border-top: 2px solid #ccc;
           }
           h2 {
             margin: 0 0 10px 0;
@@ -36,21 +38,32 @@ class Track extends React.Component<Props> {
           }
           td {
             line-height: 50px;
-            width: 50px;
+            width: 70px;
+            padding:5px;
             text-align: center;
-            background: #eee;
-            font-weight: bold;
-            font-size: 24px;
-            border-radius: 3px;
+            background: #e35205;
+            color: #fff;
+            font-size: 16px;
             cursor: pointer;
           }
+          .td__selected {
+            color: #000;
+            border: 2px solid #e35205;
+            background: #fff;
+          }
+
+          .td__unmet {
+            color: #000;
+            background: #eee;
+          }
+
           ul {
             line-height: 1.5em;
           }
         `}</style>
         <h2>{track.displayName}</h2>
-        <p className="track-description">{track.description}</p>
-        <div style={{display: 'flex'}}>
+        <p style={{ marginLeft: 20}} dangerouslySetInnerHTML={{ __html: track.description }}></p>
+        <div style={{display: 'flex', marginTop:25}}>
           <table style={{flex: 0, marginRight: 50}}>
             <tbody>
               {milestones.slice().reverse().map((milestone) => {
@@ -58,7 +71,7 @@ class Track extends React.Component<Props> {
                 return (
                   <tr key={milestone}>
                     <td onClick={() => this.props.handleTrackMilestoneChangeFn(this.props.trackId, milestone)}
-                        style={{border: `4px solid ${milestone === currentMilestoneId ? '#000' : isMet ? categoryColorScale(track.category) : '#eee'}`, background: isMet ? categoryColorScale(track.category) : undefined}}>
+                      className={ milestone === currentMilestoneId ? 'td__selected' : (isMet ? '' : 'td__unmet')}>
                       {milestone}
                     </td>
                   </tr>
@@ -69,18 +82,32 @@ class Track extends React.Component<Props> {
           {currentMilestone ? (
             <div style={{flex: 1}}>
               <h3>{currentMilestone.summary}</h3>
-              <h4>Example behaviors:</h4>
+              <h4>Basic behaviors:</h4>
               <ul>
                 {currentMilestone.signals.map((signal, i) => (
                   <li key={i}>{signal}</li>
                 ))}
               </ul>
-              <h4>Example tasks:</h4>
+              <h4>Basic examples:</h4>
               <ul>
                 {currentMilestone.examples.map((example, i) => (
                   <li key={i}>{example}</li>
                 ))}
               </ul>
+              <h3>{currentMilestone.advSummary}</h3>
+              <h4>Advanced behaviors:</h4>
+              <ul>
+                {currentMilestone.advSignals.map((signal, i) => (
+                  <li key={i}>{signal}</li>
+                ))}
+              </ul>
+              <h4>Advanced examples:</h4>
+              <ul>
+                {currentMilestone.advExamples.map((example, i) => (
+                  <li key={i}>{example}</li>
+                ))}
+              </ul>
+
             </div>
           ) : null}
         </div>

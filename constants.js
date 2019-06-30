@@ -34,90 +34,147 @@ export type Track = {
   description: string,
   milestones: {
     summary: string,
+    advSummary: string,
     signals: string[],
-    examples: string[]
+    examples: string[],
+    advSignals: string[],
+    advExamples: string[]
   }[]
 }
 
 type Tracks = {|
   'COMM_PERSONAL': Track,
-  'PROB_CRIT': Track,
-  'LEAD_PER_EFF': Track,
-  'COMM_FINANCE': Track,
-  'ADAPT_RESIL': Track,
-  'CREATIVITY_INNO': Track
-|}
+    'PROB_CRIT': Track,
+      'LEAD_PER_EFF': Track,
+        'COMM_FINANCE': Track,
+          'ADAPT_RESIL': Track,
+            'CREATIVITY_INNO': Track
+              |}
 
 export const tracks: Tracks = {
   "COMM_PERSONAL": {
-    "displayName": "Mobile",
+    "displayName": "Communication & Interpersonal skills",
     "category": "A",
-    "description": "Develops expertise in native mobile platform engineering, such as iOS or Android",
+    "description": `Being a great colleague and working effectively as part of a team </br>
+    Being able to clearly articulate your view and share with others (and do this in an effective way) </br>
+    Building relationships (at all levels, both internally and externally) </br>
+    Using a range of communication mediums e.g. presentations, pitches, written comms (blogs) </br>
+    Being able to influence </br>
+    Giving and receiving feedback effectively </br>
+    I speak up about things that aren't right e.g. inappropriate behaviour </br>
+    Understanding when to escalate or ask for help`,
+
     "milestones": [{
-      "summary": "Works effectively within established iOS or Android architectures, following current best practices",
+      // ===== LEVEL 1
+      "summary": "Delivering small routine tasks",
       "signals": [
-        "Delivers features requiring simple local modifications",
-        "Adds simple actions that call server endpoints",
-        "Reuses existing components appropriately",
+        "Understands well-formed requirements",
+        "Applies previous experience to solve similar problems",
+        "Fills in minor gaps in specification, applying common sense",
+        "Asks for help when stuck and able to follow through if given specific guidance"
       ],
       "examples": [
-        "Added existing button to a different iOS surface",
-        "Add follow button for publications on Android",
-        "Fetched and displayed a new stream, using existing stream item styles",
+        "Take a well-understood user story through elaboration and implementation with minimal support",
+        "Figures out what is being asked for without needing it to be spelled out in complete detail"
+      ],
+      "advSummary": "Delivering more challenging single tasks",
+      "advSignals": [
+        "Understands what needs to be done to deliver small tasks based on brief and vague requirements",
+        "Uses novel combinations of previous experience to solve somewhat new problems",
+        "Fills in more significant gaps in specification, applying common sense",
+        "Asks for help when stuck and applies general guidance to specific problem"
+      ],
+      "advExamples": [
+        "Infers missing requirements for a user story using a basic understanding of business need",
+        "(Non-tech example to be added)"
       ],
     }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
+      // ===== LEVEL 2
+      "summary": "Tackling larger tasks",
       "signals": [
-        "Defines new useful and appropriate proto-generated objects",
-        "Creates simple new activities on Android",
-        "Migrates code from old patterns to new patterns",
+        "Understands what needs to be done for larger tasks (e.g. taking several days) and thinks through them clearly without being daunted by the task",
+        "Splits up the work into logical chunks and works through them systematically",
+        "Challenges unclear or poorly-formed requirements and asks appropriate questions to get clarity on what's needed",
+        "Starting to form opinions about how problems should be solved",
+        "May identify specific issues at a company level without necessarily knowing how to solve them",
       ],
       "examples": [
-        "Upgraded SDWebImage to a new major version",
-        "Added support for rendering a new type of stream item",
-        "Prototyped a simple new feature quickly",
+        "Plays an active role in breaking down an epic into user stories",
+        "Asks revealing questions of product owner when refining/elaborating a user story",
+        "Takes responsibility for organising one aspect of the annual conference",
+      ],
+      "advSummary": "Taking ownership of larger tasks",
+      "advSignals": [
+        "Plays an active part in designing the solution to achieve the goals for larger tasks (e.g. taking several days)",
+        "Has clear opinions which are applied when comparing solution options but may sometimes get blinkered and fail to adequately explore alteratives",
+        "Proposes reasonable adjustments or alternatives to the given business requirements, when needed, to avoid spending undue effort on unimportant things",
+        "Helps others understand tasks like this so they can deliver them effectively",
+        "Involved with prioritising tasks and determining the best order to deliver them"
+      ],
+      "advExamples": [
+        "Contributes to the technical design for an epic",
+        "Leads the organising of a mini conference"
       ],
     }, {
-      "summary": "Designs major new features and demonstrates a nuanced understanding of mobile platform constraints",
+      // ===== LEVEL 3
+      "summary": "Establishing yourself as a valued consultant for the client",
       "signals": [
-        "Implements complex features with a large product surface area",
-        "Works effectively with  Android reactive programming framework",
-        "Adds support for new iOS features after a major iOS version upgrade",
+        "Can frame and communicate complex issues or situations and clearly articulate next steps",
+        "Are able to organise and facilitate client meetings"
       ],
       "examples": [
-        "Designed iOS caching strategy for offline reading",
-        "Built series reader on Android",
-        "Informed the team about recent best practice changes and deprecations",
+        "Organise sessions with the team and client to discuss and decide on key topics"
+      ],
+      "advSummary": "Widening your client consultancy impact",
+      "advSignals": [
+        "Are able to tailor communication style to the audience e.g. level of detail, technical content etc.",
+        "Can use facilitation techniques to help a group arrive at consensus or resolve issues"
+      ],
+      "advExamples": [
+        "Provide information in an understandable format for both technical and non-technical audiences",
+        "Use facilitation techniques to help keep workshops and meetings productive, e.g. set agenda, timebox discussions, set a goal for the meeting and don't let it end without a list of actions"
       ],
     }, {
-      "summary": "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
+      // ===== LEVEL 4
+      "summary": "Taking on more client responsibility and influence",
       "signals": [
-        "Pioneers architecture migration strategies that reduce programmer burden",
-        "Fixes subtle memory management issues",
-        "Implements interactive dismissals that bring delight",
+        "Are able to seamlessly transition between different types of communication styles based on stakeholder needs",
+        "Have an engaging communication style",
       ],
       "examples": [
-        "Upgraded CocoaPods to a new major version",
-        "Designed architecture for fetching and rendering stream items",
-        "Migrated Android persistance layer to reactive programming",
+        "Use data to support people who are analytical in style, or storytelling for those who are more emotive",
+        "Vary your approach and techniques dependent on the client situation"
+      ],
+      "advSummary": "Able to lead on consultancy engagements for clients",
+      "advSignals": [
+        "Are able to use emotional intelligence to guide behaviour"
+      ],
+      "advExamples": [
+        "Read the situation and reactions of both yourself and others and adapt accordingly to aim for the best outcomes"
       ],
     }, {
-      "summary": "Is an industry-leading expert in mobile engineering or sets strategic mobile direction for an eng team",
+      // ===== LEVEL 5
+      "summary": "Taking on the lead role for a significant area",
       "signals": [
-        "Defines long-term goals and ensures active projects are in service of them",
-        "Designs and builds innovative, industry-leading UI interactions",
-        "Invents new techniques to responsibly stretch limits of the Android platform",
+        "Are able to adapt communication style to work effectively with all levels, from C-level down",
       ],
       "examples": [
-        "Defined and drove complete migration plan to Swift or Kotlin",
-        "Implemented Android recycler views before platform support existed",
-        "Pioneered application-level abstractions for multi-app environment",
-      ],
+        " Tailor your communication and how you influence for different levels of client engagement, from board down",
+        ],
+        "advSummary": "Recognised as the go-to leader for your area",
+        "advSignals": [
+          "Are comfortable presenting clearly and confidently in high profile situations, acting as an ambassador for IW"
+        ],
+        "advExamples": [
+          "Speak and network at large conferences",
+          "Present and participate in client board meetings",
+          "Facilitate challenging sessions with the aim of arriving at a clear outcome"
+        ],
     }],
   },
 
   "PROB_CRIT": {
-    "displayName": "Web client",
+    "displayName": "Problem Solving & Critical Thinking",
     "category": "A",
     "description": "Develops expertise in web client technologies, such as HTML, CSS, and JavaScript",
     "milestones": [{
@@ -184,7 +241,7 @@ export const tracks: Tracks = {
   },
 
   "LEAD_PER_EFF": {
-    "displayName": "Foundations",
+    "displayName": "Leadership & Personal Effectiveness",
     "category": "A",
     "description": "Develops expertise in foundational systems, such as deployments, pipelines, databases and machine learning",
     "milestones": [{
@@ -251,7 +308,7 @@ export const tracks: Tracks = {
   },
 
   "COMM_FINANCE": {
-    "displayName": "Servers",
+    "displayName": "Commercial & Financial Acumen",
     "category": "A",
     "description": "Develops expertise in server side engineering, using technologies such as Go, NodeJS, or Scala",
     "milestones": [{
@@ -318,7 +375,7 @@ export const tracks: Tracks = {
   },
 
   "ADAPT_RESIL": {
-    "displayName": "Project management",
+    "displayName": "Adaptability & Resilience",
     "category": "B",
     "description": "Delivers well-scoped programs of work that meet their goals, on time, to budget, harmoniously",
     "milestones": [{
@@ -385,7 +442,7 @@ export const tracks: Tracks = {
   },
 
   "CREATIVITY_INNO": {
-    "displayName": "Communication",
+    "displayName": "Creativity & Innovation",
     "category": "B",
     "description": "Shares the right amount of information with the right people, at the right time, and listens effectively",
     "milestones": [{
@@ -482,20 +539,20 @@ export const categoryColorScale = d3.scaleOrdinal()
   .range(['#E35205', '#E35205', '#E35205', '#E35205'])
 
 export const titles = [
-  {label: 'Associate Consultant', minPoints: 0, maxPoints: 16},
-  {label: 'Consultant', minPoints: 17, maxPoints: 35},
-  {label: 'Senior Consultant', minPoints: 36, maxPoints: 57},
-  {label: 'Principal Consultant', minPoints: 36, maxPoints: 57},
-  {label: 'Practice Lead', minPoints: 58},
-  {label: 'Technical Lead', minPoints: 58},
-  {label: 'Delivery Lead', minPoints: 60},
-  {label: 'Account Lead', minPoints: 60}
+  { label: 'Associate Consultant', minPoints: 0, maxPoints: 16 },
+  { label: 'Consultant', minPoints: 17, maxPoints: 35 },
+  { label: 'Senior Consultant', minPoints: 36, maxPoints: 57 },
+  { label: 'Principal Consultant', minPoints: 36, maxPoints: 57 },
+  { label: 'Practice Lead', minPoints: 58 },
+  { label: 'Technical Lead', minPoints: 58 },
+  { label: 'Delivery Lead', minPoints: 60 },
+  { label: 'Account Lead', minPoints: 60 }
 ]
 
 export const eligibleTitles = (milestoneMap: MilestoneMap): string[] => {
   const totalPoints = totalPointsFromMilestoneMap(milestoneMap)
 
   return titles.filter(title => (title.minPoints === undefined || totalPoints >= title.minPoints)
-                             && (title.maxPoints === undefined || totalPoints <= title.maxPoints))
+    && (title.maxPoints === undefined || totalPoints <= title.maxPoints))
     .map(title => title.label)
 }

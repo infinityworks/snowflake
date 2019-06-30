@@ -6,8 +6,8 @@ export default () =>
                     <div class="site-header__logo">
                         <a class="site-header__link" href="/">
                             <h1 class="h2 site-header__logo">Infinity Works</h1>
-                            <span style={{ color: 'white' }}>Career development toolkit</span>
                         </a>
+                        <div class="site-header__subtitle" style={{ color: 'white' }}>Career development toolkit</div>
                     </div>
                 </div>
 

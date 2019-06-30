@@ -13,7 +13,7 @@
 	border: 0;
 }
 
-*, 
+*,
 *:before,
 *:after {
   -moz-box-sizing: border-box;
@@ -165,8 +165,7 @@ h5,h6 {
 }
 
 p {
-    font-size: 18px;
-    font-size: 1.125rem;
+    font-size: 16px;
     padding-bottom: 1.25em;
     max-width: 800px;
     line-height: 1.3em;
@@ -912,6 +911,16 @@ hr {
     transition: all ease .3s;
 }
 
+.site-header__subtitle {
+    opacity: 1;
+    transition: opacity ease .3s;
+    width: 200px;
+    margin: 0 auto;
+    padding: 0;
+    height: 23px;
+    background-size: 240px 23px;
+}
+
     .site-header__logo .h1,
     .site-header__logo h1 {
         opacity: 1;
@@ -930,6 +939,7 @@ hr {
 
     @media only screen and (min-width:48em) {
         .site-header__logo .h1,
+        .site-header__subtitle,
         .site-header__logo h1 {
             margin: 0;
             background-position: left top;
@@ -1157,7 +1167,7 @@ hr {
    background-color: #efefef;
    padding: 30px 0;
 }
-    
+
     .cross-sell p {
         padding-bottom: 1em;
     }
@@ -1342,7 +1352,6 @@ hr {
 }
 
 .section2__container {
-    background-color: #efefef;
     padding-top: 30px;
     position: relative;
     width: 100%;
@@ -1362,7 +1371,6 @@ hr {
     }
     .section2__container .container {
         width: 100%;
-        position: absolute;
         top: 30px;
     }
 }
@@ -1372,7 +1380,7 @@ hr {
         width: 100%;
         top: 7%;
     }
-   
+
 }
 
 @media only screen and (min-width:75em) {
@@ -1529,7 +1537,7 @@ hr {
     .section__container {
         padding: 0
     }
-    
+
 }
 
 /* Contact page */

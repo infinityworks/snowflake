@@ -116,16 +116,17 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
           <link rel="icon" type="image/png" href="/static/favicon.ico" />
           <link href="/static/css/print/print.css" rel="stylesheet" media="print" type="text/css" />
           <link href="/static/css/main/core.css" rel="stylesheet" type="text/css" />
+          <script src="https://kit.fontawesome.com/5fcfe3f5ee.js"></script>
         </Helmet>
 
         <Header />
 
-        <div id="main-content" style={{height:1200}}>
+        <div id="main-content">
           <section id="section2" class="section2__container">
             <div class="container" >
               <div class="row section2" style={{ paddingTop: 80, marginLeft: 25 }}>
 
-                <div class="col bpxxs-col-12 bps-col-3 bpm-off-col-0 bpm-col-3 bpl-off-col-1 bpl-col-3">
+                <div class="col bpxxs-col-12 bps-col-6 bpm-off-col-0 bpm-col-6 bpl-off-col-1 bpl-col-6"  style={{ paddingTop: 40 }}>
                   <TitleDisplay
                     milestoneByTrack={this.state.milestoneByTrack}
                     currentTitle={this.state.title}

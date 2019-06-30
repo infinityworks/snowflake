@@ -14,7 +14,15 @@ class TitleDisplay extends React.Component {
   render() {
     const titles = eligibleTitles(this.props.milestoneByTrack)
     return <div>
-      Available roles based on your experience:
+      <style jsx>{`
+        ul {
+          line-height: 1.5em;
+        }
+        li {
+          font-size: 16px;
+        }
+      `}</style>
+      <h2>Available roles based on your experience</h2>
       <ul>
         {titles.map(title => (
           <li>
