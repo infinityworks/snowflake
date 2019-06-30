@@ -55,65 +55,58 @@ export const tracks: Tracks = {
   "COMM_PERSONAL": {
     "displayName": "Communication & Interpersonal skills",
     "category": "A",
-    "description": `Being a great colleague and working effectively as part of a team </br>
-    Being able to clearly articulate your view and share with others (and do this in an effective way) </br>
-    Building relationships (at all levels, both internally and externally) </br>
-    Using a range of communication mediums e.g. presentations, pitches, written comms (blogs) </br>
-    Being able to influence </br>
-    Giving and receiving feedback effectively </br>
-    I speak up about things that aren't right e.g. inappropriate behaviour </br>
-    Understanding when to escalate or ask for help`,
+    "description": `• Being a great colleague and working effectively as part of a team </br>
+    • Being able to clearly articulate your view and share with others (and do this in an effective way) </br>
+    • Building relationships (at all levels, both internally and externally) </br>
+    • Using a range of communication mediums e.g. presentations, pitches, written comms (blogs) </br>
+    • Being able to influence </br>
+    • Giving and receiving feedback effectively </br>
+    • I speak up about things that aren't right e.g. inappropriate behaviour </br>
+    • Understanding when to escalate or ask for help`,
 
     "milestones": [{
       // ===== LEVEL 1
-      "summary": "Delivering small routine tasks",
+      "summary": "Establishing yourself in a team",
       "signals": [
-        "Understands well-formed requirements",
-        "Applies previous experience to solve similar problems",
-        "Fills in minor gaps in specification, applying common sense",
-        "Asks for help when stuck and able to follow through if given specific guidance"
+        "Can communicate clearly with colleagues so that thoughts and ideas are well understood, providing rationale for decisions (both written and verbal)",
+        "Can work collaboratively alongside colleagues and clients as part of a team:",
+        "Are respectful to others",
+        "Represent IW in a professional and positive way"
       ],
       "examples": [
-        "Take a well-understood user story through elaboration and implementation with minimal support",
-        "Figures out what is being asked for without needing it to be spelled out in complete detail"
+        "Engage in two way, collaborative effective discussion whilst pairing with others",
+        "Ask questions to clarify understanding",
+        "Contribute effectively in meetings, knowing when to speak up and when to listen",
+        "Use clear and effective written information to support your work"
       ],
-      "advSummary": "Delivering more challenging single tasks",
+      "advSummary": "Expanding your skills and confidence to include working with clients",
       "advSignals": [
-        "Understands what needs to be done to deliver small tasks based on brief and vague requirements",
-        "Uses novel combinations of previous experience to solve somewhat new problems",
-        "Fills in more significant gaps in specification, applying common sense",
-        "Asks for help when stuck and applies general guidance to specific problem"
+        "Can communicate clearly with clients so that thoughts and ideas are well understood, providing sound rationale for decisions (both written and verbal)",
       ],
       "advExamples": [
-        "Infers missing requirements for a user story using a basic understanding of business need",
-        "(Non-tech example to be added)"
+        "Ask questions to explore the client's view",
+        "Explain your thinking on a topic to the client",
+        "Ask questions to provoke thought and challenge the team",
+        "Write blogs (or similar) on key learnings"
       ],
     }, {
       // ===== LEVEL 2
-      "summary": "Tackling larger tasks",
+      "summary": "Being a valuable colleague",
       "signals": [
-        "Understands what needs to be done for larger tasks (e.g. taking several days) and thinks through them clearly without being daunted by the task",
-        "Splits up the work into logical chunks and works through them systematically",
-        "Challenges unclear or poorly-formed requirements and asks appropriate questions to get clarity on what's needed",
-        "Starting to form opinions about how problems should be solved",
-        "May identify specific issues at a company level without necessarily knowing how to solve them",
+        "Have awareness of and seek to develop non-verbal communication aspects like body language and tone as part of communications and interactions",
+        "Are able to develop effective and active listening skills"
       ],
       "examples": [
-        "Plays an active role in breaking down an epic into user stories",
-        "Asks revealing questions of product owner when refining/elaborating a user story",
-        "Takes responsibility for organising one aspect of the annual conference",
+        "Be conscious of allowing colleagues to make their point",
+        "Use a friendly and engaging manner to help others feel at ease"
       ],
-      "advSummary": "Taking ownership of larger tasks",
+      "advSummary": "Expanding your sphere of influence",
       "advSignals": [
-        "Plays an active part in designing the solution to achieve the goals for larger tasks (e.g. taking several days)",
-        "Has clear opinions which are applied when comparing solution options but may sometimes get blinkered and fail to adequately explore alteratives",
-        "Proposes reasonable adjustments or alternatives to the given business requirements, when needed, to avoid spending undue effort on unimportant things",
-        "Helps others understand tasks like this so they can deliver them effectively",
-        "Involved with prioritising tasks and determining the best order to deliver them"
+        "Being able to influence colleagues in effective non-confrontation ways"
       ],
       "advExamples": [
-        "Contributes to the technical design for an epic",
-        "Leads the organising of a mini conference"
+        "Draw out opinions from colleagues through open questions",
+        "Work out the best way to phrase (and re-phrase) your thoughts to help others understand, both verbally and in writing"
       ],
     }, {
       // ===== LEVEL 3
@@ -176,201 +169,345 @@ export const tracks: Tracks = {
   "PROB_CRIT": {
     "displayName": "Problem Solving & Critical Thinking",
     "category": "A",
-    "description": "Develops expertise in web client technologies, such as HTML, CSS, and JavaScript",
+    "description": `• Analyses the situation to extract a clear and simple understanding of what needs to be done </br>
+    • Practices continuous improvement </br>
+    • Adapts to change  </br>
+    • Is results oriented  </br>
+    • Is not daunted by a challenge  </br>
+    • Is open minded`,
+
     "milestones": [{
-      "summary": "Works effectively within established web client architectures, following current best practices",
-      "signals": [
-        "Makes minor modifications to existing screens",
-        "Fixes simple design quality issues",
-        "Uses CSS appropriately, following style guide",
-      ],
-      "examples": [
-        "Implemented sticky footer on the post page",
-        "Hooked up the action to dismiss a post from a stream",
-        "Built PaymentHistory screen using ResponseScreen",
-      ],
-    }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
-      "signals": [
-        "Makes sensible abstractions based on template and code patterns",
-        "Specs and builds interactive components independently",
-        "Prototypes simple new features quickly",
-      ],
-      "examples": [
-        "Built credit card input component",
-        "Created shared buttons template",
-        "Built modal system",
-      ],
-    }, {
-      "summary": "Designs major new features and demonstrates a nuanced understanding of browser constraints",
-      "signals": [
-        "Provides useful design feedback and suggests feasible alternatives",
-        "Performs systemic tasks to significantly minimise bundle size",
-        "Acts a caretaker for all of web client code",
-      ],
-      "examples": [
-        "Designed font loading strategy for Medium",
-        "Researched utility of service workers for Medium",
-        "Designed and implemented ResponseScreen",
-      ],
-    }, {
-      "summary": "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
-      "signals": [
-        "Pioneers architecture migrations that reduce programmer burden",
-        "Implements complex UI transitions that bring delight",
-        "Makes architectural decisions that eliminate entire classes of bugs",
-      ],
-      "examples": [
-        "Designed Medium's post morpher and delta system",
-        "Implemented Medium's scrolling text over image blur",
-        "Designed and pioneered proto-based model storage",
-      ],
-    }, {
-      "summary": "Is an industry-leading expert in web client or sets strategic web client direction for an eng team",
-      "signals": [
-        "Invents new techniques to innovate and overcome browser constraints",
-        "Identifies and solved systemic problems with current architecture",
-        "Defines a long-term vision for web client and ensures projects are in service of it",
-      ],
-      "examples": [
-        "Invented CSS in JS",
-        "Defined and drove migration strategy to Lite",
-        "Implemented unidirectional data flow to completion",
-      ],
+     // ===== LEVEL 1
+     "summary": "Delivering small routine tasks",
+     "signals": [
+       "Understands well-formed requirements",
+       "Applies previous experience to solve similar problems",
+       "Fills in minor gaps in specification, applying common sense",
+       "Asks for help when stuck and able to follow through if given specific guidance"
+     ],
+     "examples": [
+       "Take a well-understood user story through elaboration and implementation with minimal support",
+       "Figures out what is being asked for without needing it to be spelled out in complete detail"
+     ],
+     "advSummary": "Delivering more challenging single tasks",
+     "advSignals": [
+       "Understands what needs to be done to deliver small tasks based on brief and vague requirements",
+       "Uses novel combinations of previous experience to solve somewhat new problems",
+       "Fills in more significant gaps in specification, applying common sense",
+       "Asks for help when stuck and applies general guidance to specific problem"
+     ],
+     "advExamples": [
+       "Infers missing requirements for a user story using a basic understanding of business need",
+       "(Non-tech example to be added)"
+     ],
+   }, {
+     // ===== LEVEL 2
+     "summary": "Tackling larger tasks",
+     "signals": [
+       "Understands what needs to be done for larger tasks (e.g. taking several days) and thinks through them clearly without being daunted by the task",
+       "Splits up the work into logical chunks and works through them systematically",
+       "Challenges unclear or poorly-formed requirements and asks appropriate questions to get clarity on what's needed",
+       "Starting to form opinions about how problems should be solved",
+       "May identify specific issues at a company level without necessarily knowing how to solve them",
+     ],
+     "examples": [
+       "Plays an active role in breaking down an epic into user stories",
+       "Asks revealing questions of product owner when refining/elaborating a user story",
+       "Takes responsibility for organising one aspect of the annual conference",
+     ],
+     "advSummary": "Taking ownership of larger tasks",
+     "advSignals": [
+       "Plays an active part in designing the solution to achieve the goals for larger tasks (e.g. taking several days)",
+       "Has clear opinions which are applied when comparing solution options but may sometimes get blinkered and fail to adequately explore alteratives",
+       "Proposes reasonable adjustments or alternatives to the given business requirements, when needed, to avoid spending undue effort on unimportant things",
+       "Helps others understand tasks like this so they can deliver them effectively",
+       "Involved with prioritising tasks and determining the best order to deliver them"
+     ],
+     "advExamples": [
+       "Contributes to the technical design for an epic",
+       "Leads the organising of a mini conference"
+     ],
+   }, {
+       // ===== LEVEL 3
+       "summary": "Leading larger tasks",
+       "signals": [
+         "Leads the definition and specification of larger tasks for self and others",
+         "Heavily involved in the solution design to achieve the task goals",
+         "Predicts likely/immediate impacts and consequences when assessing candidate solutions",
+         "Identifies when larger tasks should be split or merged to better represent how they can be delivered effectively",
+         "Identifies the underlying principles and their relevance from complex information and can clearly explain them to others"
+       ],
+       "examples": [
+         "Leads the technical design for an epic",
+         "Leads the organising of an annual conference"
+       ],
+       "advSummary": "Maintaining the project",
+         "advSignals": [
+           "Leads the definition and specification of larger tasks for self and others",
+           "Leads parts of the overall project solution design",
+           "Plays an active role in maintaining the team delivery plan in the face of changing circumstances",
+           "Helps the team understand and align around the overall solution design and delivery plan",
+           "Plays an active role in the identification and resolution of risks, issues, dependencies",
+           "Challenges fundamental assumptions and proposes sometimes radically different alternative approaches to achieve the ultimate goals"
+         ],
+         "advExamples": [
+           "// TODO"
+         ],
+      }, {
+       // ===== LEVEL 4
+       "summary": "Forming or fixing the project",
+       "signals": [
+         "Leads the formation of the initial solution design and delivery plan for new projects of moderate size/complexity",
+         "Predicts subtle and indirect impacts and consequences when assessing candidate solutions",
+         "Leads identification and resolution of risks, issues, dependencies",
+         "Identifies issues with in-flight projects and puts in place changes to the solution design and delivery plan to address them",
+         "Identifies client/department-wide strengths and weaknesses, amplifies and develops strengths and proactively proposes ways to strengthen weaknesses",
+         "Uses awareness of others' strengths to lead larger-scale problem solving initiatives"
+       ],
+       "examples": [
+         "// TODO",
+       ],
+       "advSummary": "Introducing company-wide thinking",
+         "advSignals": [
+           "Leads the formation of the initial solution design and delivery plan for wholly new or large/complex client engagements / departments",
+           "Helps others in identifying issues with in-flight projects and identifying changes to the solution design and delivery plan to address them",
+           "Identifies company-wide strengths and weaknesses, amplifies strengths and proactively proposes ways to strengthen weaknesses"
+         ],
+         "advExamples": [
+           "// TODO"
+         ],
+      }, {
+       // ===== LEVEL 5
+       "summary": "Increasing company wide contribution",
+       "signals": [
+         "Supports others in leading the initial solution design and delivery plan for wholly new or large/complex client engagements / departments",
+         "Develops the skills in others needed to identify issues with in-flight projects and put in place changes to the solution design and delivery plan to address them",
+         "Leads others in identifying company-wide strengths and weaknesses, and coaches on how to amplify strengths and strengthen weaknesses",
+         "Works across multiple teams and provides point support for particularly challenging situations",
+         "Recognised throughout the company as an exceptionally clear thinker, able to take on the largest challenges"
+       ],
+       "examples": [
+         "// TODO",
+       ],
+       "advSummary": "Taking a leading role, company wide",
+         "advSignals": [
+           "Leads the development of new company capabilities",
+           "Leads process and organisational design at a whole company level to deliver company values",
+           "Draws on a whole-company and industry-wide awareness to provide high impact support and intervention for the most challenging situations across a region"
+         ],
+         "advExamples": [
+           "// TODO"
+         ],
     }],
   },
 
   "LEAD_PER_EFF": {
     "displayName": "Leadership & Personal Effectiveness",
     "category": "A",
-    "description": "Develops expertise in foundational systems, such as deployments, pipelines, databases and machine learning",
+    "description": `• Not criticising people for mistakes; learning experience opportunity </br>
+    • Ambassadorship </br>
+    • Inclusivity </br>
+    • Helping others do their job well (e.g. at more senior level), sharing your skills with others to help them develop </br>
+    • Developing and caring about your team and your peers </br>
+    • Taking ownership of your career </br>
+    • Sharing and celebrating team successes`,
     "milestones": [{
-      "summary": "Works effectively within established structures, following current best practices",
+      // ===== LEVEL 1
+      "summary": "// TODO",
       "signals": [
-        "Writes thorough postmortems for service outages",
-        "Makes simple configuration changes to services",
-        "Performs backfills safely and effectively, without causing pages",
+        "// TODO",
       ],
       "examples": [
-        "Made safe and effective Ansible changes",
-        "Implemented new ETL pipelines based on existing ones",
-        "Resolved out of disk errors independently",
+        "// TODO",
       ],
+      "advSummary": "// TODO",
+        "advSignals": [
+          "// TODO"
+        ],
+        "advExamples": [
+          "// TODO"
+        ],
     }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
-      "signals": [
-        "Made minor version upgrades to technologies",
-        "Builds machine learning jobs within the ML framework",
-        "Triages service issues correctly and independently",
-      ],
-      "examples": [
-        "Upgraded NodeJS from 8.0 to 8.1.1",
-        "Built custom packages for RPMs",
-        "Improved ETL efficiency by improving Dynamo to S3 loading",
-      ],
-    }, {
-      "summary": "Designs standalone systems of moderate complexity, or major new features in existing systems",
-      "signals": [
-        "Acts as primary maintainer for existing critical systems",
-        "Designs moderately complex systems",
-        "Makes major version upgrades to libraries",
-      ],
-      "examples": [
-        "Designed Ansible configuration management",
-        "Built Medium's realtime stats pipeline",
-        "Designed flexible framework for writing machine learning jobs",
-      ],
-    }, {
-      "summary": "Builds complex, reusable architectures that pioneer best practices for other engineers, or multi-system services",
-      "signals": [
-        "Designs complex projects that encompass multiple systems and technologies",
-        "Demonstrates deep knowledge of foundational systems",
-        "Introduces new databases and technologies to meet underserved needs",
-      ],
-      "examples": [
-        "Designed and built BBFD",
-        "Designed AWS configuration management",
-        "Introduced Kinesis and pioneered streaming events pipeline",
-      ],
-    }, {
-      "summary": "Is an industry-leading expert in foundational engineering or sets strategic foundational direction for an eng team",
-      "signals": [
-        "Designs transformational projects in service of long-term goals",
-        "Defines the strategic vision for foundational work and supporting technologies",
-        "Invents industry-leading techniques to solve complex problems",
-      ],
-      "examples": [
-        "Invented a novel ML technique that advanced the state of the art",
-        "Defined and developed Medium's continuous delivery strategy",
-        "Developed and implemented HA strategy",
-      ],
+       // ===== LEVEL 2
+       "summary": "// TODO",
+       "signals": [
+         "// TODO",
+       ],
+       "examples": [
+         "// TODO",
+       ],
+       "advSummary": "// TODO",
+         "advSignals": [
+           "// TODO"
+         ],
+         "advExamples": [
+           "// TODO"
+         ],
+      }, {
+       // ===== LEVEL 3
+       "summary": "// TODO",
+       "signals": [
+         "// TODO",
+       ],
+       "examples": [
+         "// TODO",
+       ],
+       "advSummary": "// TODO",
+         "advSignals": [
+           "// TODO"
+         ],
+         "advExamples": [
+           "// TODO"
+         ],
+      }, {
+       // ===== LEVEL 4
+       "summary": "// TODO",
+       "signals": [
+         "// TODO",
+       ],
+       "examples": [
+         "// TODO",
+       ],
+       "advSummary": "// TODO",
+         "advSignals": [
+           "// TODO"
+         ],
+         "advExamples": [
+           "// TODO"
+         ],
+      }, {
+       // ===== LEVEL 5
+       "summary": "// TODO",
+       "signals": [
+         "// TODO",
+       ],
+       "examples": [
+         "// TODO",
+       ],
+       "advSummary": "// TODO",
+         "advSignals": [
+           "// TODO"
+         ],
+         "advExamples": [
+           "// TODO"
+         ],
     }],
   },
 
   "COMM_FINANCE": {
     "displayName": "Commercial & Financial Acumen",
     "category": "A",
-    "description": "Develops expertise in server side engineering, using technologies such as Go, NodeJS, or Scala",
+    "description": `• Understanding the Consulting Business Model and how we manage the business e.g. rate cards, margin, costs </br>
+    • Treating IW money as your own </br>
+    • Negotiation skills </br>
+    • Focused on Customer outcomes </br>
+    • Taking an interest in my client's business and the challenges they are facing </br>
+    • Bridge the gap between client challenges and IW offerings to seed new business opportunities </br>
+    • Bringing the best of IW to our clients </br>
+    • Being able to understand and manage risk`,
     "milestones": [{
-      "summary": "Works effectively within established server side frameworks, following current best practices",
+      // ===== LEVEL 1
+      "summary": "Undertanding the basics of our business",
       "signals": [
-        "Adds NodeJS endpoints using layers architecture",
-        "Adds golang endpoints using Gotham architecture",
-        "Makes minor server changes to support client needs",
+        "Can explain the basics of how our business operates",
+        "Can explain the impact your contribution has on the business",
+        "Complete the tasks needed to support the business operations (accurately and on time)"
       ],
       "examples": [
-        "Added IFTTT trigger for new bookmark to medium2",
-        "Added delete audio route to Buggle",
-        "Queried a Dynamo LSI appropriately",
+        "Complete timesheets when requested, ensuring these are completed with care to avoid mistakes",
+        "When making a request for funding e.g. project event, I have asked myself the question \"would I spend my own money on this, is it good value?\""
       ],
+      "advSummary": "Starting to show Commercial awareness of the client",
+        "advSignals": [
+          "// TODO"
+        ],
+        "advExamples": [
+          "// TODO"
+        ],
     }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
-      "signals": [
-        "Assesses correctness and utility of existing code and avoids blind copy-pasting",
-        "Generalizes code when appropriate",
-        "Determines data needs from product requirements",
-      ],
-      "examples": [
-        "Identified need for new index on Dynamo",
-        "Acted as caretaker for routes protos",
-        "Updated Facebook API version and codebase dependencies",
-      ],
-    }, {
-      "summary": "Designs standalone systems of moderate complexity, or major new features in existing systems",
-      "signals": [
-        "Acts as primary maintainer for existing critical systems",
-        "Integrates third party services effectively",
-        "Writes playbooks for new service maintenance",
-      ],
-      "examples": [
-        "Implemented Google Auth login to Medium",
-        "Implemented payments integration with Stripe",
-        "Built Textshots server",
-      ],
-    }, {
-      "summary": "Builds complex, reusable architectures that pioneer best practices for other engineers, or multi-system services",
-      "signals": [
-        "Delivers complex systems that achieve their goals",
-        "Avoids subtle architectural mistakes when considering new systems",
-        "Makes appropriate buy vs build choices",
-      ],
-      "examples": [
-        "Designed Medium's ranked feed architecture",
-        "Designed custom domains architecture",
-        "Created Gotham framework for creating Go services",
-      ],
-    }, {
-      "summary": "Is an industry-leading expert in server side engineering or sets strategic server side direction for an eng team",
-      "signals": [
-        "Designs transformational projects of significant complexity and scope",
-        "Makes decisions that have positive, long term, wide ranging consequences",
-        "Identifies and solves systemic problems with current architecture",
-      ],
-      "examples": [
-        "Researched, vetted, and selected Go as Medium's statically typed language",
-        "Defined microservices architecture and medium2 migration plan",
-        "Defined and implemented proprietary IP core to the company's success",
-      ],
+       // ===== LEVEL 2
+       "summary": "Expanding knowledge of our business as well as understanding that of our clients",
+       "signals": [
+         "Can describe your client's business and how they operate in their marketplace",
+         "Have an understanding of the IW service offerings",
+         "Continues to drive cost effectiveness in terms of how IW spends its money"
+       ],
+       "examples": [
+         "Could describe the different IW service offerings to a colleague",
+         "Could deliver a short talk about your client and the objectives project",
+         "Make suggestions on how to be more cost effective, recognising that money spent on one thing means it can't be spent on another"
+       ],
+       "advSummary": "// TODO",
+         "advSignals": [
+           "// TODO"
+         ],
+         "advExamples": [
+           "// TODO"
+         ],
+      }, {
+       // ===== LEVEL 3
+       "summary": "Sound understanding of our business and clients and developing a commercial and customer outcome mindset",
+       "signals": [
+         "Understand the construct of the SOW you are currently working on and the key elements of it from a commercial perspective",
+         "Are able to articulate the value IW are currently bringing to the client under the current SOW",
+         "Are able to articulate the IW service offerings to an existing or potential client",
+         "Helping ensure the business can deliver against it's operational requirements"
+       ],
+       "examples": [
+         "Being able to deliver an elevator pitch on IW Service Offerings",
+         "Ensuring timesheet approvals are completed on time"
+       ],
+       "advSummary": "// TODO",
+         "advSignals": [
+           "Participate and seek ways to add value through Account Planning",
+           "Support different elements of the sales pipeline (generation, proposal, pitch, closure)",
+           "Understanding the business risks of our business or a certain opportunity"
+         ],
+         "advExamples": [
+           "// TODO"
+         ],
+      }, {
+       // ===== LEVEL 4
+       "summary": "Solidifying your commercial and financial awareness and supporting the improvement of the business (e.g. profitabilty, growth)",
+       "signals": [
+         "Contribute to Account Planning",
+         "Understand the construct of a Statement of Work (SOW) and be able to draft a Time and Materials SOW",
+         "Consider the profitability and business strategy when making commercial decisions",
+         "Can lead some aspects of the sales pipeline (generation, proposal, pitch, closure)"
+       ],
+       "examples": [
+         "// TODO",
+       ],
+       "advSummary": "Taking Responsibility for Commercial and Financial Aspects within a certain sphere of influence",
+         "advSignals": [
+           "Lead on Account Planning activities",
+           "Draft a Fixed Price Statement of Work (SOW)",
+           "Can lead on all aspects of the sales pipeline (generation, proposal, pitch, closure)",
+           "Understands the levers that drive profitability in the business"
+         ],
+         "advExamples": [
+           "Reviewing and approving client invoices"
+         ],
+      }, {
+       // ===== LEVEL 5
+       "summary": "Taking responsibility for broader and more strategic commercial and financial aspects",
+       "signals": [
+         "Focus on profitability and long-term sustainable growth",
+         "Support the development of new Service Offerings",
+         "Can lead in sales generation into new markets and with new offerings",
+         "Are comfortable making decisions that impact business profitability",
+         "Manage Account Planning"
+       ],
+       "examples": [
+         "// TODO",
+       ],
+       "advSummary": "// TODO",
+         "advSignals": [
+           "// TODO"
+         ],
+         "advExamples": [
+           "// TODO"
+         ],
     }],
   },
 
@@ -379,65 +516,85 @@ export const tracks: Tracks = {
     "category": "B",
     "description": "Delivers well-scoped programs of work that meet their goals, on time, to budget, harmoniously",
     "milestones": [{
-      "summary": "Effectively delivers individual tasks",
+      // ===== LEVEL 1
+      "summary": "Basic Summary",
       "signals": [
-        "Estimates small tasks accurately",
-        "Delivers tightly-scoped projects efficiently",
-        "Writes effective technical specs outlining approach",
+        "Basic signal",
       ],
       "examples": [
-        "Wrote the technical spec for featured post images",
-        "Delivered stream item support for email digests",
-        "Delivered payment history dashboard",
+        "Basic example",
       ],
+      "advSummary": "Advanced Summary",
+        "advSignals": [
+          "Advanced signal"
+        ],
+        "advExamples": [
+          "Advanced Example"
+        ],
     }, {
-      "summary": "Effectively delivers small personal projects",
-      "signals": [
-        "Performs research and considers alternative approaches",
-        "Balances pragmatism and polish appropriately",
-        "Defines and hits interim milestones",
-      ],
-      "examples": [
-        "Delivered promo editor",
-        "Delivered audio uploading for web client",
-        "Executed the recommends to claps backfill",
-      ],
-    }, {
-      "summary": "Effectively delivers projects through a small team",
-      "signals": [
-        "Delegates tasks to others appropriately",
-        "Integrates business needs into project planning",
-        "Chooses appropriate project management strategy based on context",
-      ],
-      "examples": [
-        "Ran project retro to assess improvement opportunities",
-        "Completed launch checklist unprompted for well controlled rollout",
-        "Facilitated project kickoff meeting to get buy-in",
-      ],
-    }, {
-      "summary": "Effectively delivers projects through a large team, or with a significant amount of stakeholders or complexity",
-      "signals": [
-        "Finds ways to deliver requested scope faster, and prioritizes backlog",
-        "Manages dependencies on other projects and teams",
-        "Leverages recognition of repeated project patterns",
-      ],
-      "examples": [
-        "Oversaw technical delivery of Hightower",
-        "Managed infrastructure migration to VPC",
-        "Involved marketing, legal, and appropriate functions at project start",
-      ],
-    }, {
-      "summary": "Manages major company pushes delivered by multiple teams",
-      "signals": [
-        "Considers external constraints and business objectives when planning",
-        "Leads teams of teams, and coordinates effective cross-functional collaboration",
-        "Owns a key company metric",
-      ],
-      "examples": [
-        "Managed technical migration to SOA",
-        "Lead technical delivery of 10/7",
-        "Delivered multi-month engineering project on time",
-      ],
+       // ===== LEVEL 2
+       "summary": "Basic Summary",
+       "signals": [
+         "Basic signal",
+       ],
+       "examples": [
+         "Basic example",
+       ],
+       "advSummary": "Advanced Summary",
+         "advSignals": [
+           "Advanced signal"
+         ],
+         "advExamples": [
+           "Advanced Example"
+         ],
+      }, {
+       // ===== LEVEL 3
+       "summary": "Basic Summary",
+       "signals": [
+         "Basic signal",
+       ],
+       "examples": [
+         "Basic example",
+       ],
+       "advSummary": "Advanced Summary",
+         "advSignals": [
+           "Advanced signal"
+         ],
+         "advExamples": [
+           "Advanced Example"
+         ],
+      }, {
+       // ===== LEVEL 4
+       "summary": "Basic Summary",
+       "signals": [
+         "Basic signal",
+       ],
+       "examples": [
+         "Basic example",
+       ],
+       "advSummary": "Advanced Summary",
+         "advSignals": [
+           "Advanced signal"
+         ],
+         "advExamples": [
+           "Advanced Example"
+         ],
+      }, {
+       // ===== LEVEL 5
+       "summary": "Basic Summary",
+       "signals": [
+         "Basic signal",
+       ],
+       "examples": [
+         "Basic example",
+       ],
+       "advSummary": "Advanced Summary",
+         "advSignals": [
+           "Advanced signal"
+         ],
+         "advExamples": [
+           "Advanced Example"
+         ],
     }],
   },
 
@@ -446,65 +603,85 @@ export const tracks: Tracks = {
     "category": "B",
     "description": "Shares the right amount of information with the right people, at the right time, and listens effectively",
     "milestones": [{
-      "summary": "Communicates effectively to close stakeholders when called upon, and incorporates constructive feedback",
+      // ===== LEVEL 1
+      "summary": "Basic Summary",
       "signals": [
-        "Communicates project status clearly and effectively",
-        "Collaborates with others with empathy",
-        "Asks for help at the appropriate juncture",
+        "Basic signal",
       ],
       "examples": [
-        "Updated The Watch before running a backfill",
-        "Updated project status changes in Asana promptly",
-        "Gave thoughtful check-in and check-out comments",
+        "Basic example",
       ],
+      "advSummary": "Advanced Summary",
+        "advSignals": [
+          "Advanced signal"
+        ],
+        "advExamples": [
+          "Advanced Example"
+        ],
     }, {
-      "summary": "Communicates with the wider team appropriately, focusing on timeliness and good quality conversations",
-      "signals": [
-        "Practises active listening and suspension of attention",
-        "Ensures stakeholders are aware of current blockers",
-        "Chooses the appropriate tools for accurate and timely communication",
-      ],
-      "examples": [
-        "Received and integrated critical feedback positively",
-        "Created cross-team Slack channel for payments work",
-        "Spoke to domain experts before writing spec",
-      ],
-    }, {
-      "summary": "Proactively shares information, actively solicits feedback, and facilitates communication for multiple stakeholders",
-      "signals": [
-        "Resolves communication difficulties between others",
-        "Anticipates and shares schedule deviations in plenty of time",
-        "Manages project stakeholder expectations effectively",
-      ],
-      "examples": [
-        "Directed team response effectively during outages",
-        "Gave a substantial Eng All Hands presentation on React",
-        "Gave notice of upcoming related work in Eng Briefing",
-      ],
-    }, {
-      "summary": "Communicates complex ideas skillfully and with nuance, and establishes alignment within the wider organization",
-      "signals": [
-        "Communicates project risk and tradeoffs skillfully and with nuance",
-        "Contextualizes and clarifies ambiguous direction and strategy for others",
-        "Negotiates resourcing compromises with other teams",
-      ],
-      "examples": [
-        "Lead off-site workshop on interviewing",
-        "Wrote Medium's growth framework and rationale",
-        "Aligned the entire organization around claps",
-      ],
-    }, {
-      "summary": "Influences outcomes at the highest level, moves beyond mere broadcasting, and sets best practices for others",
-      "signals": [
-        "Defines processes for clear communication for the entire team",
-        "Shares the right amount of information with the right people, at the right time",
-        "Develops and delivers plans to execs, the board, and outside investors",
-      ],
-      "examples": [
-        "Organized half year check-in company offsite",
-        "Created the communication plan for a large organizational change",
-        "Presented to the board about key company metrics and projects",
-      ],
+       // ===== LEVEL 2
+       "summary": "Basic Summary",
+       "signals": [
+         "Basic signal",
+       ],
+       "examples": [
+         "Basic example",
+       ],
+       "advSummary": "Advanced Summary",
+         "advSignals": [
+           "Advanced signal"
+         ],
+         "advExamples": [
+           "Advanced Example"
+         ],
+      }, {
+       // ===== LEVEL 3
+       "summary": "Basic Summary",
+       "signals": [
+         "Basic signal",
+       ],
+       "examples": [
+         "Basic example",
+       ],
+       "advSummary": "Advanced Summary",
+         "advSignals": [
+           "Advanced signal"
+         ],
+         "advExamples": [
+           "Advanced Example"
+         ],
+      }, {
+       // ===== LEVEL 4
+       "summary": "Basic Summary",
+       "signals": [
+         "Basic signal",
+       ],
+       "examples": [
+         "Basic example",
+       ],
+       "advSummary": "Advanced Summary",
+         "advSignals": [
+           "Advanced signal"
+         ],
+         "advExamples": [
+           "Advanced Example"
+         ],
+      }, {
+       // ===== LEVEL 5
+       "summary": "Basic Summary",
+       "signals": [
+         "Basic signal",
+       ],
+       "examples": [
+         "Basic example",
+       ],
+       "advSummary": "Advanced Summary",
+         "advSignals": [
+           "Advanced signal"
+         ],
+         "advExamples": [
+           "Advanced Example"
+         ],
     }],
   }
 }

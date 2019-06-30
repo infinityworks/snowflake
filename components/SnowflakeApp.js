@@ -124,7 +124,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
         <div id="main-content">
           <section id="section2" class="section2__container">
             <div class="container" >
-              <div class="row section2" style={{ paddingTop: 80, marginLeft: 25 }}>
+              <div class="row section2" style={{ paddingTop: 80, marginLeft:15, marginRight:15}}>
 
                 <div class="col bpxxs-col-12 bps-col-6 bpm-off-col-0 bpm-col-6 bpl-off-col-1 bpl-col-6"  style={{ paddingTop: 40 }}>
                   <TitleDisplay

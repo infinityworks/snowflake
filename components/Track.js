@@ -68,7 +68,7 @@ class Track extends React.Component<Props> {
             <tbody>
               {milestones.slice().reverse().map((milestone) => {
                 const isMet = milestone <= currentMilestoneId
-                return (
+                return milestone == 0 ? '' : (
                   <tr key={milestone}>
                     <td onClick={() => this.props.handleTrackMilestoneChangeFn(this.props.trackId, milestone)}
                       className={ milestone === currentMilestoneId ? 'td__selected' : (isMet ? '' : 'td__unmet')}>
