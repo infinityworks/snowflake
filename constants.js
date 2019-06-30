@@ -514,86 +514,106 @@ export const tracks: Tracks = {
   "ADAPT_RESIL": {
     "displayName": "Adaptability & Resilience",
     "category": "B",
-    "description": "Delivers well-scoped programs of work that meet their goals, on time, to budget, harmoniously",
+    "description": `• Ability to be pragmatic and handle failure </br>
+    • Not throwing your toys out of the pram </br>
+    • Dealing with uncertainty and ambiguity </br>
+    • Strong opinion, loosely held (Egoless) </br>
+    • Demonstrating staying power </br>
+    • Take actions to build my mental, emotional and physical resilience`,
     "milestones": [{
       // ===== LEVEL 1
-      "summary": "Basic Summary",
+      "summary": "// TODO",
       "signals": [
-        "Basic signal",
+        "Recognise the nature of our business which can lead to uncertainty or the need to adapt to new situations quickly",
+        "Are learning the skills to operate in a client delivery environment and the pressures this may create",
+        "Recognise when you need more support",
+        "Are working on building your self-awareness (ability to identify your own thoughts, emotions and behaviours)"
       ],
       "examples": [
-        "Basic example",
+        "Asking for help from your Account Lead or Advocate if you are struggling on your project for any reason",
       ],
-      "advSummary": "Advanced Summary",
+      "advSummary": "// TODO",
         "advSignals": [
-          "Advanced signal"
+          "Can remain calm and professional under pressure",
+          "Takes a failure as a learning opportunity",
+          "Are working on building the skill of self-regulation (being able to regulate your thoughts, actions, and emotions)"
         ],
         "advExamples": [
-          "Advanced Example"
+          "Don't fixate on failure, accept defeat and focus on the future"
         ],
     }, {
        // ===== LEVEL 2
-       "summary": "Basic Summary",
+       "summary": "Understands the need for Adaptability and Resilience",
        "signals": [
-         "Basic signal",
+         "Operates with a growth rather than fixed mindset",
+         "Seek opportunities to build resilience",
+         "Maintain perspective of a situation and avoid over-reacting"
        ],
        "examples": [
-         "Basic example",
+         "// TODO",
        ],
-       "advSummary": "Advanced Summary",
+       "advSummary": "// TODO",
          "advSignals": [
-           "Advanced signal"
+           "// TODO"
          ],
          "advExamples": [
-           "Advanced Example"
+           "// TODO"
          ],
       }, {
        // ===== LEVEL 3
-       "summary": "Basic Summary",
+       "summary": "// TODO",
        "signals": [
-         "Basic signal",
+         "Deals with difficult situations with maturity and provides support to work towards an outcome",
+         "Can provide to others when faced with a challenging situation",
+         "Having an open-minded approach and be willing to adapt",
+         "Can transition between roles with ease, accepting new situations readily",
+         "Recognising the need to balance opinions and potentially adapt your perspective"
        ],
        "examples": [
-         "Basic example",
+         "// TODO",
        ],
-       "advSummary": "Advanced Summary",
+       "advSummary": "// TODO",
          "advSignals": [
-           "Advanced signal"
+           "// TODO"
          ],
          "advExamples": [
-           "Advanced Example"
+           "// TODO"
          ],
       }, {
        // ===== LEVEL 4
-       "summary": "Basic Summary",
+       "summary": "// TODO",
        "signals": [
-         "Basic signal",
+         "Demonstrate staying power; to be able to see something through to conclusion",
+         "Support the leadership team in building resilience in the teams and people you are responsible for",
+         "Being able to operate when there is no precedent or structure in place",
+         "Being able to manage conflict or difficult situations",
+         "Being able to manage criticism objectively"
        ],
        "examples": [
-         "Basic example",
+         "// TODO",
        ],
-       "advSummary": "Advanced Summary",
+       "advSummary": "// TODO",
          "advSignals": [
-           "Advanced signal"
+           "Being able to manage a crisis or highly stressful situation without losing your head"
          ],
          "advExamples": [
-           "Advanced Example"
+           "// TODO"
          ],
       }, {
        // ===== LEVEL 5
-       "summary": "Basic Summary",
+       "summary": "// TODO",
        "signals": [
-         "Basic signal",
+         "Can support others in building their adaptablity and resilience",
        ],
        "examples": [
-         "Basic example",
+         "// TODO",
        ],
-       "advSummary": "Advanced Summary",
+       "advSummary": "// TODO",
          "advSignals": [
-           "Advanced signal"
+           "// TODO"
          ],
          "advExamples": [
-           "Advanced Example"
+           "// TODO"
          ],
     }],
   },
@@ -601,86 +621,119 @@ export const tracks: Tracks = {
   "CREATIVITY_INNO": {
     "displayName": "Creativity & Innovation",
     "category": "B",
-    "description": "Shares the right amount of information with the right people, at the right time, and listens effectively",
+    "description": `• Generating ideas
+    • Apply creativity to critical thinking
+    • Being curious
+    • Thinking outside the box
+    • Synthesising and reorganising information in the search for better outcomes
+    • Being willing to try something new
+    • Continuous improvement, both yourself and Infinity Works
+    • Developing thought leadership
+    • Intelligent risk taking`,
     "milestones": [{
       // ===== LEVEL 1
-      "summary": "Basic Summary",
+      "summary": "Come up with multiple approaches for yourself",
       "signals": [
-        "Basic signal",
+        "Are able to come up with multiple approaches to a problem or challenge and evaluate these",
+        "Are able to experiment and learn from your findings",
+        "Are keen to explore multiple views from others"
       ],
       "examples": [
-        "Basic example",
+        "Create a list of options and test out each one",
+        "Put forward ideas to improve within team sessions such as retros",
+        "Ask good questions to explore what others think"
       ],
-      "advSummary": "Advanced Summary",
+      "advSummary": "Share your ideas with others",
         "advSignals": [
-          "Advanced signal"
+          "Are confident in sharing thoughts and ideas with colleagues on your team",
+          "Are able to evaluate the ideas of others and make a judgment on which to try"
         ],
         "advExamples": [
-          "Advanced Example"
+          "Engage in conversations with colleagues to generate ideas and approaches to try",
+          "Summarise the different options and weigh these up objectively"
         ],
     }, {
        // ===== LEVEL 2
-       "summary": "Basic Summary",
+       "summary": "Generate ideas to help improve your team and be comfortable with change",
        "signals": [
-         "Basic signal",
+         "Put forward multiple options to challenges that the team encounter",
+         "Can show that you've learnt and adapted from trying and experimenting with different approaches"
        ],
        "examples": [
-         "Basic example",
+         "Seed in ideas in response to things both you and the team identify",
+         "Explain your improvements in a clear and concise way"
        ],
-       "advSummary": "Advanced Summary",
+       "advSummary": "Your ideas and creativity have benefited your team and colleagues in a tangible way",
          "advSignals": [
-           "Advanced signal"
+           "Encourage others to share their thoughts and ideas",
+           "Realise a change from the status quo may be needed and make a case for this",
+           "Are comfortable with ambiguity and happy to work with this"
          ],
          "advExamples": [
-           "Advanced Example"
+           "Take on a task or requested outcome and own generating various options to achieve it"
          ],
       }, {
        // ===== LEVEL 3
-       "summary": "Basic Summary",
+       "summary": "You generate experiments and solutions to help in a wider context (client and IW)",
        "signals": [
-         "Basic signal",
+         "Are able to spot where a challenge lies and think about different approaches to improve it",
+         "Are able to use creative thinking to help present and implement ideas that can help solve a larger challenge"
        ],
        "examples": [
-         "Basic example",
+         "Take a specific client or IW challenge and come up with options to improve it",
+         "Try out these ideas and learn from their implementation"
        ],
-       "advSummary": "Advanced Summary",
+       "advSummary": "Your ideas and experiments are changing the status quo in a wider context. You're able to help others do so too",
          "advSignals": [
-           "Advanced signal"
+           "Encourage a team culture of looking to continuously improve and try out new ideas",
+           "Analyse learning from experiments to adapt and evolve",
+           "Are able to influence the adoption of new approaches in a wider context"
          ],
          "advExamples": [
-           "Advanced Example"
+           "Lead sessions for the team to brainstorm ideas and approaches",
+           "Help the team deal with ambiguity and work through it"
          ],
       }, {
        // ===== LEVEL 4
-       "summary": "Basic Summary",
+       "summary": "Your innovation and creativity is bringing real benefits to your client or area within IW",
        "signals": [
-         "Basic signal",
+         "Are known as a key person to help bring about improvements within your area",
+         "Can show a clear pattern of improvements generated from experiments and learning",
+         "Can bring creativity and options to significant challenges and revel in this",
+         "Realise your views are not always the best and be open to others",
+         "Show leadership in helping drive the above forward"
        ],
        "examples": [
-         "Basic example",
+         "Track a roadmap of experiments and improvements made for your team/client",
        ],
-       "advSummary": "Advanced Summary",
+       "advSummary": "Improvements are being realised for IW",
          "advSignals": [
-           "Advanced signal"
+           "Have helped IW improve through application of innovation and creativity",
+           "Have led challenging change and demonstrated how innovative changes have benefited"
          ],
          "advExamples": [
-           "Advanced Example"
+           "// TODO"
          ],
       }, {
        // ===== LEVEL 5
-       "summary": "Basic Summary",
+       "summary": "You provide leadership to develop a culture of creativity and innovation",
        "signals": [
-         "Basic signal",
+         "Foster the right environment to help creativity and innovation take place",
+         "Lead on the application of techniques to foster creativity",
+         "Provide support and cover for change",
+         "Provide a physiologically safe environment to experiment"
        ],
        "examples": [
-         "Basic example",
+         "// TODO",
        ],
-       "advSummary": "Advanced Summary",
+       "advSummary": "Innovation and creativity are things you are reknowned for within your industry and career",
          "advSignals": [
-           "Advanced signal"
+           "Are sought out for your input and support to solving tricky challenges",
+           "Are seen as a thought leader around innovation in your given field",
+           "Share your continuous improvement journey and learning through experimentation with a wide audience"
          ],
          "advExamples": [
-           "Advanced Example"
+           "// TODO"
          ],
     }],
   }
