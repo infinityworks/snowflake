@@ -53,7 +53,7 @@ type Tracks = {|
 
 export const tracks: Tracks = {
   "COMM_PERSONAL": {
-    "displayName": "Communication & Interpersonal skills",
+    "displayName": "Building great relationships",
     "category": "A",
     "description": `• Being a great colleague and working effectively as part of a team </br>
     • Being able to clearly articulate your view and share with others (and do this in an effective way) </br>
@@ -167,7 +167,7 @@ export const tracks: Tracks = {
   },
 
   "PROB_CRIT": {
-    "displayName": "Problem Solving & Critical Thinking",
+    "displayName": "Figuring stuff out",
     "category": "A",
     "description": `• Analyses the situation to extract a clear and simple understanding of what needs to be done </br>
     • Practices continuous improvement </br>
@@ -302,7 +302,7 @@ export const tracks: Tracks = {
   },
 
   "LEAD_PER_EFF": {
-    "displayName": "Leadership & Personal Effectiveness",
+    "displayName": "Leading the Infinity Works way",
     "category": "A",
     "description": `• Not criticising people for mistakes; learning experience opportunity </br>
     • Ambassadorship </br>
@@ -395,7 +395,7 @@ export const tracks: Tracks = {
   },
 
   "COMM_FINANCE": {
-    "displayName": "Commercial & Financial Acumen",
+    "displayName": "Developing Infinity Works",
     "category": "A",
     "description": `• Understanding the Consulting Business Model and how we manage the business e.g. rate cards, margin, costs </br>
     • Treating IW money as your own </br>
@@ -512,7 +512,7 @@ export const tracks: Tracks = {
   },
 
   "ADAPT_RESIL": {
-    "displayName": "Adaptability & Resilience",
+    "displayName": "Embracing change and ambiguity",
     "category": "B",
     "description": `• Ability to be pragmatic and handle failure </br>
     • Not throwing your toys out of the pram </br>
@@ -619,7 +619,7 @@ export const tracks: Tracks = {
   },
 
   "CREATIVITY_INNO": {
-    "displayName": "Creativity & Innovation",
+    "displayName": "Thinking differently",
     "category": "B",
     "description": `• Generating ideas
     • Apply creativity to critical thinking
