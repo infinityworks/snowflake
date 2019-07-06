@@ -4,10 +4,10 @@ export default () =>
             <div class="row">
                 <div class="col bpxxs-col-12 bps-col-3 bpm-off-col-0 bpm-col-3 bpl-off-col-1 bpl-col-3">
                     <div class="site-header__logo">
-                        <a class="site-header__link" href="/">
-                            <h1 class="h2 site-header__logo">Infinity Works</h1>
+                        <a className="site-header__link" href="/">
+                            <h1 className="h2 site-header__logo">Infinity Works</h1>
                         </a>
-                        <div class="site-header__subtitle" style={{ color: 'white' }}>Career development toolkit</div>
+                        <div class="site-header__subtitle" style={{ color: 'white' }}>Core Skills Radar</div>
                     </div>
                 </div>
 

@@ -111,7 +111,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
       <main>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>IW Snowflake v0.1</title>
+          <title>IW - Core Skills Radar</title>
           <link rel="canonical" href="http://mysite.com/example" />
           <link rel="icon" type="image/png" href="/static/favicon.ico" />
           <link href="/static/css/print/print.css" rel="stylesheet" media="print" type="text/css" />

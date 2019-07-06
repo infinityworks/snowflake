@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import { eligibleTitles } from '../constants'
+import { eligibleTitles, approximateCareerLevel } from '../constants'
 import type { MilestoneMap } from '../constants'
 
 type Props = {
@@ -12,7 +12,8 @@ type Props = {
 
 class TitleDisplay extends React.Component {
   render() {
-    const titles = eligibleTitles(this.props.milestoneByTrack)
+    const titles = eligibleTitles(this.props.milestoneByTrack);
+    const careerLevels = approximateCareerLevel(this.props.milestoneByTrack);
     return <div>
       <style jsx>{`
         ul {
@@ -27,6 +28,14 @@ class TitleDisplay extends React.Component {
         {titles.map(title => (
           <li>
             {title}
+          </li>
+        ))}
+      </ul>
+      <h2>Approximate career level</h2>
+      <ul>
+        {careerLevels.map(careerLevel => (
+          <li>
+            {careerLevel}
           </li>
         ))}
       </ul>

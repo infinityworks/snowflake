@@ -1,0 +1,17 @@
+{
+  "name": "sheet_import",
+  "version": "1.0.0",
+  "description": "",
+  "main": "import.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "xlsx": "^0.14.3"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.102.0"
+  }
+}

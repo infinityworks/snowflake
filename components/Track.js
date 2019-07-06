@@ -60,9 +60,13 @@ class Track extends React.Component<Props> {
           ul {
             line-height: 1.5em;
           }
+
         `}</style>
-        <h2>{track.displayName}</h2>
+
+        <h2 title={track.movieQuote}>{track.displayName}</h2>
+
         <p style={{ marginLeft: 20}} dangerouslySetInnerHTML={{ __html: track.description }}></p>
+   
         <div style={{display: 'flex', marginTop:25}}>
           <table style={{flex: 0, marginRight: 50}}>
             <tbody>
@@ -81,33 +85,17 @@ class Track extends React.Component<Props> {
           </table>
           {currentMilestone ? (
             <div style={{flex: 1}}>
-              <h3>{currentMilestone.summary}</h3>
               <h4>Basic behaviors:</h4>
-              <ul>
-                {currentMilestone.signals.map((signal, i) => (
-                  <li key={i}>{signal}</li>
-                ))}
-              </ul>
+              <p dangerouslySetInnerHTML={{ __html: currentMilestone.signals }}></p>
+              
               <h4>Basic examples:</h4>
-              <ul>
-                {currentMilestone.examples.map((example, i) => (
-                  <li key={i}>{example}</li>
-                ))}
-              </ul>
-              <h3>{currentMilestone.advSummary}</h3>
+              <p dangerouslySetInnerHTML={{ __html: currentMilestone.examples }}></p>
+            
               <h4>Advanced behaviors:</h4>
-              <ul>
-                {currentMilestone.advSignals.map((signal, i) => (
-                  <li key={i}>{signal}</li>
-                ))}
-              </ul>
-              <h4>Advanced examples:</h4>
-              <ul>
-                {currentMilestone.advExamples.map((example, i) => (
-                  <li key={i}>{example}</li>
-                ))}
-              </ul>
+              <p dangerouslySetInnerHTML={{ __html: currentMilestone.advSignals }}></p>
 
+              <h4>Advanced examples:</h4>
+              <p dangerouslySetInnerHTML={{ __html: currentMilestone.advExamples }}></p>
             </div>
           ) : null}
         </div>
