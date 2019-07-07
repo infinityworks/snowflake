@@ -64,15 +64,15 @@ const emptyState = (): SnowflakeAppState => {
 
 const defaultState = (): SnowflakeAppState => {
   return {
-    name: 'Tamas Infinite',
-    title: 'Senior Consultant',
+    name: '',
+    title: '',
     milestoneByTrack: {
       'COMM_PERSONAL': 1,
-      'PROB_CRIT': 3,
-      'LEAD_PER_EFF': 3,
-      'COMM_FINANCE': 3,
-      'ADAPT_RESIL': 4,
-      'CREATIVITY_INNO': 2
+      'PROB_CRIT': 1,
+      'LEAD_PER_EFF': 1,
+      'COMM_FINANCE': 1,
+      'ADAPT_RESIL': 1,
+      'CREATIVITY_INNO': 1
     },
     focusedTrackId: 'COMM_PERSONAL'
   }
