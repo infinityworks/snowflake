@@ -18,10 +18,10 @@ export const milestoneToPoints = (milestone: Milestone): number => {
   switch (milestone) {
     case 0: return 0
     case 1: return 1
-    case 2: return 3
-    case 3: return 6
-    case 4: return 12
-    case 5: return 20
+    case 2: return 2
+    case 3: return 3
+    case 4: return 4
+    case 5: return 5
     default: return 0
   }
 }
@@ -92,20 +92,20 @@ export const categoryColorScale = d3.scaleOrdinal()
   .domain(categoryIds)
   .range(['#E35205', '#E35205', '#E35205', '#E35205'])
 
+export const advocateLevels = [2,2,2,2,2,2];
+
+
 export const titles = [
-  { label: 'Infinite', minPoints: 0 },
-  { label: 'Advocate', minPoints: 28 },
-  { label: 'Practice Lead', minPoints: 68 },
-  { label: 'Technical Lead', minPoints: 68 },
-  { label: 'Delivery Lead', minPoints: 70 },
-  { label: 'Account Lead', minPoints: 70 }
+  { label: 'Advocate', minPoints: 0, minLevels: 2 },
+  { label: 'Engineer', minPoints: 0, minLevels: 1 },
+  { label: 'Technical Lead', minPoints: 0, minLevels: 3 }
 ]
 
 export const consultantLevels = [
   { label: 'Associate Consultant', minLevels: 1, minPoints:0 },
-  { label: 'Consultant', minLevels: 2, minPoints:18 },
-  { label: 'Senior Consultant', minLevels: 3, minPoints:28 },
-  { label: 'Principal Consultant', minLevels: 4, minPoints:38 },
+  { label: 'Consultant', minLevels: 1, minPoints:12 },
+  { label: 'Senior Consultant', minLevels: 2, minPoints:18 },
+  { label: 'Principal Consultant', minLevels: 3, minPoints:24 },
 ]
 
 export const getMinLevel = (milestoneMap: MilestoneMap): number => {
@@ -124,8 +124,9 @@ export const approximateCareerLevel = (milestoneMap: MilestoneMap): string[] => 
 
 export const eligibleTitles = (milestoneMap: MilestoneMap): string[] => {
   const totalPoints = totalPointsFromMilestoneMap(milestoneMap)
+  const minLevel = getMinLevel(milestoneMap)
 
   return titles.filter(title => (title.minPoints === undefined || totalPoints >= title.minPoints)
-    && (title.maxPoints === undefined || totalPoints <= title.maxPoints))
+    && (title.maxPoints === undefined || totalPoints <= title.maxPoints) && (title.minLevels <= minLevel))
     .map(title => title.label)
 }

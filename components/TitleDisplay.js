@@ -32,13 +32,7 @@ class TitleDisplay extends React.Component {
         ))}
       </ul>
       <h2>Approximate career level</h2>
-      <ul>
-        {careerLevels.map(careerLevel => (
-          <li>
-            {careerLevel}
-          </li>
-        ))}
-      </ul>
+      {careerLevels[careerLevels.length - 1]}
     </div>
   }
 }
