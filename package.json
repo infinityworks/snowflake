@@ -6,10 +6,12 @@
   "license": "MIT",
   "dependencies": {
     "d3": "^4.11.0",
+    "global": "^4.4.0",
     "next": "^4.0.0-beta.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-share": "^3.0.0"
   },
   "scripts": {
     "dev": "next",

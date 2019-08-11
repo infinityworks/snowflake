@@ -58,8 +58,12 @@ class NightingaleChart extends React.Component<Props> {
           }
           .track-milestone-current, .track-milestone:hover {
             stroke: #000;
-            stroke-width: 4px;
+            stroke-width: 2px;
             stroke-linejoin: round;
+          }
+          .track-focused {
+            fill: #07a69b!important;
+            color: #07a69b!important;
           }
         `}</style>
         <svg>
@@ -74,7 +78,7 @@ class NightingaleChart extends React.Component<Props> {
                     return (
                       <path
                           key={milestone}
-                          className={'track-milestone ' + (isMet ? 'is-met ' : ' ') + (isCurrentMilestone ? 'track-milestone-current' : '')}
+                          className={'track-milestone ' + (isMet ? 'is-met ' : ' ') + (isCurrentMilestone ? 'track-milestone-current ' : '') + (isCurrentTrack&&isMet ? 'track-focused' : '')}
                           onClick={() => this.props.handleTrackMilestoneChangeFn(trackId, milestone)}
                           d={this.arcFn(milestone)}
                           style={{fill: isMet ? categoryColorScale(tracks[trackId].category) : undefined}} />

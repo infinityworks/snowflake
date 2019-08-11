@@ -27,12 +27,15 @@ class TitleDisplay extends React.Component {
       <ul>
         {titles.map(title => (
           <li>
-            {title}
+            <a href={title.link} target="_new">{title.label}</a>
           </li>
         ))}
       </ul>
+
+
       <h2>Approximate career level</h2>
-      {careerLevels[careerLevels.length - 1]}
+      <p style={{fontWeight: 'bold'}}>{careerLevels[careerLevels.length - 1]}</p>
+
     </div>
   }
 }

@@ -96,9 +96,11 @@ export const advocateLevels = [2,2,2,2,2,2];
 
 
 export const titles = [
-  { label: 'Advocate', minPoints: 0, minLevels: 2 },
-  { label: 'Engineer', minPoints: 0, minLevels: 1 },
-  { label: 'Technical Lead', minPoints: 0, minLevels: 3 }
+  { label: 'Advocate', link: 'https://career.infinityworks.com/roles/advocate.html', minPoints: 0, minLevels: 2 },
+  { label: 'Engineer', link: 'https://career.infinityworks.com/roles/engineer.html', minPoints: 0, minLevels: 1 },
+  { label: 'Technical Lead', link: 'https://career.infinityworks.com/roles/tech-lead.html', minPoints: 0, minLevels: 3 },
+  { label: 'Test Consultant', link: 'https://career.infinityworks.com/roles/test-consultant.html', minPoints: 0, minLevels: 2 },
+  { label: 'Cloud Partnership Manager', link: 'https://career.infinityworks.com/roles/cloud-partnership-manager.html', minPoints: 0, minLevels: 3 }
 ]
 
 export const consultantLevels = [
@@ -128,5 +130,5 @@ export const eligibleTitles = (milestoneMap: MilestoneMap): string[] => {
 
   return titles.filter(title => (title.minPoints === undefined || totalPoints >= title.minPoints)
     && (title.maxPoints === undefined || totalPoints <= title.maxPoints) && (title.minLevels <= minLevel))
-    .map(title => title.label)
+    .map(title => title)
 }

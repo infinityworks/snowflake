@@ -11,6 +11,7 @@ import TitleDisplay from '../components/TitleDisplay'
 import Helmet from 'react-helmet'
 import Header from './Header';
 import Footer from './Footer';
+import Share from './Share';
 
 
 type SnowflakeAppState = {
@@ -122,18 +123,18 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
         <Header />
 
         <div id="main-content">
-          <section id="section2" class="section2__container">
-            <div class="container" >
-              <div class="row section2" style={{ paddingTop: 80, marginLeft:15, marginRight:15}}>
+          <section id="section2" className="section2__container">
+            <div className="container" >
+              <div className="row section2" style={{ paddingTop: 80, marginLeft:15, marginRight:15}}>
 
-                <div class="col bpxxs-col-12 bps-col-6 bpm-off-col-0 bpm-col-6 bpl-off-col-1 bpl-col-6"  style={{ paddingTop: 40 }}>
+                <div className="col bpxxs-col-12 bps-col-6 bpm-off-col-0 bpm-col-6 bpl-off-col-1 bpl-col-6"  style={{ paddingTop: 40 }}>
                   <TitleDisplay
                     milestoneByTrack={this.state.milestoneByTrack}
                     currentTitle={this.state.title}
                     setTitleFn={(title) => this.setTitle(title)} />
                 </div>
 
-                <div class="col bpxxs-col-12 bps-col-3 bpm-off-col-0 bpm-col-3 bpl-off-col-1 bpl-col-3">
+                <div className="col bpxxs-col-12 bps-col-3 bpm-off-col-0 bpm-col-3 bpl-off-col-1 bpl-col-3">
                   <NightingaleChart
                     milestoneByTrack={this.state.milestoneByTrack}
                     focusedTrackId={this.state.focusedTrackId}
@@ -153,11 +154,12 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
                   milestoneByTrack={this.state.milestoneByTrack}
                   trackId={this.state.focusedTrackId}
                   handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
+                            <Share/>
               </div>
             </div>
           </section>
-        </div>
 
+        </div>
         <Footer/>
       </main>
     )

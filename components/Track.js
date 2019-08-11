@@ -1,6 +1,6 @@
 // @flow
 
-import { tracks, milestones, categoryColorScale } from '../constants'
+import { tracks, milestones, categoryColorScale, milestoneToPoints } from '../constants'
 import React from 'react'
 import type { MilestoneMap, TrackId, Milestone } from '../constants'
 
@@ -11,6 +11,34 @@ type Props = {
 }
 
 class Track extends React.Component<Props> {
+  showComingSoonMessage() {
+    alert("Coming soon!");
+  }
+
+  shuffle(array) {
+    var ctr = array.length, temp, index;
+
+    // While there are elements in the array
+    while (ctr > 0) {
+    // Pick a random index
+        index = Math.floor(Math.random() * ctr);
+        // Decrease ctr by 1
+        ctr--;
+        // And swap the last element with it
+        temp = array[ctr];
+        array[ctr] = array[index];
+        array[index] = temp;
+    }
+    return array;
+}
+
+  shuffleExamples(examples) {
+    var exampleArray = examples.split("<br/>");
+    var shuffledArray = this.shuffle(exampleArray.slice(0,5));
+
+    return shuffledArray.join("</br>");
+  }
+
   render() {
     const track = tracks[this.props.trackId]
     const currentMilestoneId = this.props.milestoneByTrack[this.props.trackId]
@@ -72,7 +100,7 @@ class Track extends React.Component<Props> {
             <tbody>
               {milestones.slice().reverse().map((milestone) => {
                 const isMet = milestone <= currentMilestoneId
-                return milestone == 0 ? '' : (
+                return milestone == 0 ? undefined : (
                   <tr key={milestone}>
                     <td onClick={() => this.props.handleTrackMilestoneChangeFn(this.props.trackId, milestone)}
                       className={ milestone === currentMilestoneId ? 'td__selected' : (isMet ? '' : 'td__unmet')}>
@@ -85,20 +113,21 @@ class Track extends React.Component<Props> {
           </table>
           {currentMilestone ? (
             <div style={{flex: 1}}>
-              <h4>Basic behaviors:</h4>
-              <p dangerouslySetInnerHTML={{ __html: currentMilestone.signals }}></p>
-              
-              <h4>Basic examples:</h4>
-              <p dangerouslySetInnerHTML={{ __html: currentMilestone.examples }}></p>
+              <h4 dangerouslySetInnerHTML={{ __html: currentMilestone.signals }}></h4>
+              <h5>Examples</h5>
+              <p style={{marginLeft:15}} dangerouslySetInnerHTML={{ __html: this.shuffleExamples(currentMilestone.examples) }}></p>
             
-              <h4>Advanced behaviors:</h4>
-              <p dangerouslySetInnerHTML={{ __html: currentMilestone.advSignals }}></p>
+              <h4 dangerouslySetInnerHTML={{ __html: currentMilestone.advSignals }}></h4> 
+              <h5>Examples <i style={{fontSize:12}}>(Advanced)</i></h5>
+              <p style={{marginLeft:15}} dangerouslySetInnerHTML={{ __html: this.shuffleExamples(currentMilestone.advExamples) }}></p>
 
-              <h4>Advanced examples:</h4>
-              <p dangerouslySetInnerHTML={{ __html: currentMilestone.advExamples }}></p>
+
+              <button className="button" onClick={this.showComingSoonMessage}>Suggest an example</button>
             </div>
+            
           ) : null}
         </div>
+        
       </div>
     )
   }

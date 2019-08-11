@@ -33,9 +33,9 @@ class TrackSelector extends React.Component<Props> {
             color: #fff;
           }
           .track-selector__selected {
-            color: #000;
-            border: 2px solid #e35205;
-            background: #fff;
+            color: #fff;
+            border: 2px solid #000;
+            background: #07a69b;
             line-height: 50px;
             width: 50px;
             text-align: center;
