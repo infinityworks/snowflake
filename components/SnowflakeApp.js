@@ -11,7 +11,6 @@ import TitleDisplay from '../components/TitleDisplay'
 import Helmet from 'react-helmet'
 import Header from './Header';
 import Footer from './Footer';
-import Share from './Share';
 
 
 type SnowflakeAppState = {
@@ -154,7 +153,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
                   milestoneByTrack={this.state.milestoneByTrack}
                   trackId={this.state.focusedTrackId}
                   handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
-                            <Share/>
+             
               </div>
             </div>
           </section>
