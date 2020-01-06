@@ -1,62 +1,91 @@
-import React from 'react'
-import { tracks } from '../constants'
-import type { MilestoneMap, Milestone } from '../constants'
+import React from 'react';
+import moment from 'moment';
+import { tracks } from '../constants';
+import type { MilestoneMap, Milestone } from '../constants';
 import pdfMake, { format } from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 export default class Header extends React.Component {
+    splitMultiline(s) {
+        return s.replace(/<br\/>/g, '\n');
+    }
 
-    generatePdf() {
-        var body = [
+    buildPdfTableSublevel(title, summary, examples) {
+        return [
+            { text: title, style: 'header' },
+            { text: this.splitMultiline(summary), style: 'paragraph', bold: true },
+            { text: 'Examples', style: 'paragraph', color: '#777777' },
+            { text: this.splitMultiline(examples), style: 'paragraph' },
+        ]
+    }
+
+    buildPdfTable() {
+        var table = [
             [], // Header
             [], // Description
         ];
         const HEADER = 0;
         const DESCRIPTION = 1;
         const LEVEL_BASE = 2;
-        const splitMultiline = s => s.replace(/<br\/>/g, '\n');
         for (const [key, value] of Object.entries(tracks)) {
-            body[HEADER].push({
+            table[HEADER].push({
                 text: value.displayName,
                 fontSize: 10,
                 bold: true
             });
-            body[DESCRIPTION].push(splitMultiline(value.description));
+            table[DESCRIPTION].push(this.splitMultiline(value.description));
             value.milestones.forEach((level, index) => {
-                const levelIndex = LEVEL_BASE + index;
-                console.log(`index=${index}, levelIndex=${levelIndex}, body.length=${body.length}`);
-                if (body.length <= levelIndex) {
-                    console.log('Adding row');
-                    body.push([]);
+                const levelIndex = LEVEL_BASE + 2 * index;
+                if (table.length <= levelIndex) {
+                    table.push([], []);
                 }
-                body[levelIndex].push(
-                    [
-                        { text: `Level ${index + 1} Core`, fontSize: 10, color: '#666666' },
-                        ' ',
-                        splitMultiline(level.signals),
-                        ' ',
-                        { text: 'Examples', color: '#666666' },
-                        ' ',
-                        splitMultiline(level.examples),
-                        ' ',
-                        { text: `Level ${index + 1} Advanced`, fontSize: 10, color: '#666666' },
-                        ' ',
-                        splitMultiline(level.advSignals),
-                        ' ',
-                        { text: 'Examples', color: '#666666' },
-                        ' ',
-                        splitMultiline(level.advExamples),
-                    ]
-                );
+                table[levelIndex].push(this.buildPdfTableSublevel(
+                    `Level ${index + 1} Core`,
+                    level.signals,
+                    level.examples
+                ));
+                table[levelIndex + 1].push(this.buildPdfTableSublevel(
+                    `Level ${index + 1} Advanced`,
+                    level.advSignals,
+                    level.advExamples
+                ));
             });
         }
+        return table;
+    }
 
+    generatePdf() {
         var docDefinition = {
             pageSize: 'A3',
             pageOrientation: 'landscape',
-            pageMargins: 40,
+            pageMargins: [40, 60, 40, 50],
             fontSize: 10,
+            header: {
+                text: 'Infinity Works skills radar',
+                fontSize: 12,
+                alignment: 'center',
+                color: '#777777',
+                margin: [40, 20]
+            },
+            footer: function (currentPage, pageCount) {
+                return {
+                    columns: [
+                        {
+                            text: `exported ${moment().format('D MMM YYYY, HH:mm')}`,
+                            fontSize: 8,
+                            color: '#777777'
+                        },
+                        {
+                            text: `${currentPage} of ${pageCount}`,
+                            alignment: 'right',
+                            fontSize: 8,
+                            color: '#777777'
+                        }
+                    ],
+                    margin: [40, 30]
+                };
+            },
             content: [
                 {
                     layout: 'lightHorizontalLines',
@@ -65,12 +94,28 @@ export default class Header extends React.Component {
                         headerRows: 1,
                         dontBreakRows: true,
                         tableCellPadding: 10,
-                        body: body
+                        body: this.buildPdfTable()
                     }
                 }
-            ]
+            ],
+            styles: {
+                header: {
+                    fontSize: 10,
+                    color: '#666666',
+                    margin: [0, 6]
+                },
+                paragraph: {
+                    margin: [0, 0, 0, 6]
+                }
+            }
         };
         pdfMake.createPdf(docDefinition).download();
+    }
+
+    constructor(props) {
+        super(props);
+
+        this.generatePdf = this.generatePdf.bind(this);
     }
 
     render() {
@@ -80,7 +125,7 @@ export default class Header extends React.Component {
                     color: #aaa;
                     font-size: 0.8em;
                     text-decoration: none;
-                    padding-left: 1em;
+                    margin-left: 1em;
                 }
                 .download:hover {
                     text-decoration: underline;
