@@ -24,11 +24,23 @@ jobs:
 
     - name: "Build project"
       run: yarn export
+    
+    - name: "Upload build artifacts for deploy"
+      uses: actions/upload-artifact@v2
+      with:
+        name: artifacts
+        path: out/
   
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
+    - name: "Download build artifacts from build"
+      uses: actions/download-artifact@v2
+      with:
+        name: artifacts
+        path: out/   
+    
     - name: "Configure AWS credentials"
       uses: aws-actions/configure-aws-credentials@v1
       with:
