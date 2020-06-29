@@ -25,3 +25,6 @@ jobs:
 
     - name: "Build project"
       run: yarn export
+    
+    - name: "Test build artifacts"
+      run: ls out/
