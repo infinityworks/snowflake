@@ -35,4 +35,4 @@ jobs:
 
     - name: Copy files to the test website with the AWS CLI
       run: |
-        aws s3 sync out/* s3://test.radar.career.infinityworks.com
+        aws s3 sync ./out/ s3://test.radar.career.infinityworks.com
