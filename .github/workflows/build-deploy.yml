@@ -8,8 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      artifact: build.zip
     steps:
     - name: "Checkout"
       uses: actions/checkout@v2
@@ -29,13 +27,13 @@ jobs:
     
     - name: "Zip project"
       run: |
-        zip -r ${{ env.artifact }} out/
+        zip -r build.zip out/
 
     - name: "Upload build artifacts for deploy"
       uses: actions/upload-artifact@v2
       with:
         name: artifacts
-        path: ${{ env.artifact }}
+        path: build.zip
   
   deploy:
     runs-on: ubuntu-latest
