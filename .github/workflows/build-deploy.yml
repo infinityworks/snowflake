@@ -55,4 +55,4 @@ jobs:
 
     - name: Copy files to the test website with the AWS CLI
       run: |
-        aws s3 cp $GITHUB_SHA.zip s3://builds.radar.career.infinityworks
+        aws s3 cp build.zip s3://builds.radar.career.infinityworks
