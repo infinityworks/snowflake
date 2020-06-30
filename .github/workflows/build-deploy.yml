@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      artifact: ${GITHUB_SHA}.zip
     steps:
     - name: "Checkout"
       uses: actions/checkout@v2
@@ -27,13 +29,13 @@ jobs:
     
     - name: "Zip project"
       run: |
-        zip -r ${GITHUB_SHA}.zip out/
+        zip -r ${{ env.artifact }} out/
 
     - name: "Upload build artifacts for deploy"
       uses: actions/upload-artifact@v2
       with:
         name: artifacts
-        path: ${GITHUB_SHA}.zip
+        path: ${{ env.artifact }}
   
   deploy:
     runs-on: ubuntu-latest
