@@ -28,13 +28,12 @@ jobs:
     - name: "Zip project"
       run: |
         zip $GITHUB_SHA.zip out/
-        ls
 
     - name: "Upload build artifacts for deploy"
       uses: actions/upload-artifact@v2
       with:
         name: artifacts
-        path: out/
+        path: $GITHUB_SHA.zip
   
   deploy:
     runs-on: ubuntu-latest
@@ -44,7 +43,6 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: artifacts
-        path: out/   
     
     - name: "Configure AWS credentials"
       uses: aws-actions/configure-aws-credentials@v1
@@ -55,4 +53,4 @@ jobs:
 
     - name: Copy files to the test website with the AWS CLI
       run: |
-        aws s3 sync ./out/ s3://test.radar.career.infinityworks.com --acl public-read
+        aws s3 cp $GITHUB_SHA.zip s3://builds.radar.career.infinityworks
