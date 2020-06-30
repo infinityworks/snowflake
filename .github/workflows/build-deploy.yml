@@ -30,7 +30,6 @@ jobs:
     - name: "Zip project"
       run: |
         zip -r ${{ env.artifact }} out/
-        ls
 
     - name: "Upload build artifacts for deploy"
       uses: actions/upload-artifact@v2
