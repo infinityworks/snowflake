@@ -29,7 +29,7 @@ Install dependencies:
 This will put a static version of the site in `out/`.
 
 ## Contributing
-When adding a new feature checkout a new branch from `master` with the name `feature/<branch>`. This ensures the workflow [build](./github/workflows/build.yml) will trigger a test build of your branch when pushed.
+When adding a new feature checkout a new branch from `master` with the name `feature/<branch>`. This ensures the workflow [build](.github/workflows/build.yml) will trigger a test build of your branch when pushed.
 
 ## Environments
-There are two environments `production` available at http://radar.career.infinityworks.com and `test` available at http://test.radar.career.infinityworks.com. When a push or merge into `master` the workflow [build-deploy](./github/workflows/build-deploy.yml) will be triggered on Github. This builds and deploys to the `test` environment.
+There are two environments `production` available at http://radar.career.infinityworks.com and `test` available at http://test.radar.career.infinityworks.com. When a push or merge into `master` the workflow [build-deploy](.github/workflows/build-deploy.yml) will be triggered on Github. This builds and deploys to the `test` environment.
