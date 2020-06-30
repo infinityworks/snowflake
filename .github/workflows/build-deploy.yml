@@ -25,6 +25,11 @@ jobs:
     - name: "Build project"
       run: yarn export
     
+    - name: "Zip project"
+      run: |
+        zip $GITHUB_SHA.zip out/
+        ls
+
     - name: "Upload build artifacts for deploy"
       uses: actions/upload-artifact@v2
       with:
