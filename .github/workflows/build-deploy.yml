@@ -27,7 +27,9 @@ jobs:
     
     - name: "Zip project"
       run: |
-        zip -r build.zip out/
+        cd out
+        zip -r ../build.zip *
+        cd ../
 
     - name: "Upload build artifacts for deploy"
       uses: actions/upload-artifact@v2
