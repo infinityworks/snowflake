@@ -27,13 +27,13 @@ jobs:
     
     - name: "Zip project"
       run: |
-        zip $GITHUB_SHA.zip out/
+        zip -r $GITHUB_SHA.zip out/
 
     - name: "Upload build artifacts for deploy"
       uses: actions/upload-artifact@v2
       with:
         name: artifacts
-        path: $GITHUB_SHA.zip
+        path: ./$GITHUB_SHA.zip
   
   deploy:
     runs-on: ubuntu-latest
