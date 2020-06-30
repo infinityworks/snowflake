@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      artifact: ${GITHUB_SHA}.zip
+      artifact: build.zip
     steps:
     - name: "Checkout"
       uses: actions/checkout@v2
@@ -35,7 +35,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: artifacts
-        path: '*.zip'
+        path: ${{ env.artifact }}
   
   deploy:
     runs-on: ubuntu-latest
