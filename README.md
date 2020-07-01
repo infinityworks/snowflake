@@ -31,5 +31,9 @@ This will put a static version of the site in `out/`.
 ## Contributing
 When adding a new feature checkout a new branch from `master` with the name `feature/<branch>`. This ensures the workflow [build](.github/workflows/build.yml) will trigger a test build of your branch when pushed.
 
-## Environments
-There are two environments `production` available at http://radar.career.infinityworks.com and `test` available at http://test.radar.career.infinityworks.com. When a push or merge into `master` the workflow [build-deploy](.github/workflows/build-deploy.yml) will be triggered on Github. This builds and deploys to the `test` environment.
+## CI/CD
+There are two environments `production` available at http://radar.career.infinityworks.com and `test` available at http://test.radar.career.infinityworks.com. The `test` environment. The `test` can be considered as both both a UAT and staging environment.
+
+When there is a push or merge into `master` the workflow [build-deploy](.github/workflows/build-deploy.yml) will be triggered with Github Actions. This builds and deploys a zip of the build to the bucket `builds.radar.career.infinityworks`.
+
+AWS CodePipeline is used to extract the build and automatically deploy to the `test` environment. A manual approval is then required to deploy to `production`. This must be done via the AWS Management Console. Go to [eu-west-1.console.aws.amazon.com/codesuite/codepipeline/pipelines](https://eu-west-1.console.aws.amazon.com/codesuite/codepipeline/pipelines) and select `career-radar`. Navigate to the `Production` Stage and click `Approve` or `Reject`.
