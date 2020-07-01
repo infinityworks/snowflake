@@ -53,6 +53,6 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-west-1
 
-    - name: Copy files to the test website with the AWS CLI
+    - name: Copy files to the build bucket with the AWS CLI
       run: |
         aws s3 cp build.zip s3://builds.radar.career.infinityworks
