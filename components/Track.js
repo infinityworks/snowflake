@@ -3,6 +3,7 @@
 import { tracks, milestones, categoryColorScale, milestoneToPoints } from '../constants'
 import React from 'react'
 import type { MilestoneMap, TrackId, Milestone } from '../constants'
+import NewExample from './NewExample';
 
 type Props = {
   milestoneByTrack: MilestoneMap,
@@ -11,10 +12,6 @@ type Props = {
 }
 
 class Track extends React.Component<Props> {
-  showComingSoonMessage() {
-    alert("Coming soon!");
-  }
-
   shuffle(array) {
     var ctr = array.length, temp, index;
 
@@ -122,7 +119,7 @@ class Track extends React.Component<Props> {
               <p style={{marginLeft:15}} dangerouslySetInnerHTML={{ __html: this.shuffleExamples(currentMilestone.advExamples) }}></p>
 
 
-              <button className="button" onClick={this.showComingSoonMessage}>Suggest an example</button>
+              <NewExample skill={track.displayName} level={currentMilestoneId} />
             </div>
             
           ) : null}
