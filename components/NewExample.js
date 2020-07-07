@@ -88,7 +88,6 @@ const NewExample = (props) => {
       description: "",
       success: false,
     });
-    // Close the example input modal as well.
     handleClose();
   };
 
