@@ -142,7 +142,6 @@ const NewExample = (props) => {
             false
           );
         });
-      setSubmitting(false);
     },
   });
 
