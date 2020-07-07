@@ -26,7 +26,7 @@ class TitleDisplay extends React.Component {
       <h2>Available roles based on your experience</h2>
       <ul>
         {titles.map(title => (
-          <li>
+          <li key={title.label}>
             <a href={title.link} target="_new">{title.label}</a>
           </li>
         ))}
