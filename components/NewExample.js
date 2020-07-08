@@ -123,7 +123,7 @@ const NewExample = (props) => {
         .then((response) => {
           if (response.status == 200) {
             handleResponseOpen(
-              "Your example has been submitted!",
+              "Thank you! your example has been submitted!",
               "Someone from people ops will review and may be in contact for further information",
               true
             );
