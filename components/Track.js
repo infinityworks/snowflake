@@ -17,21 +17,21 @@ class Track extends React.Component<Props> {
 
     // While there are elements in the array
     while (ctr > 0) {
-    // Pick a random index
-        index = Math.floor(Math.random() * ctr);
-        // Decrease ctr by 1
-        ctr--;
-        // And swap the last element with it
-        temp = array[ctr];
-        array[ctr] = array[index];
-        array[index] = temp;
+      // Pick a random index
+      index = Math.floor(Math.random() * ctr);
+      // Decrease ctr by 1
+      ctr--;
+      // And swap the last element with it
+      temp = array[ctr];
+      array[ctr] = array[index];
+      array[index] = temp;
     }
     return array;
-}
+  }
 
   shuffleExamples(examples) {
-    var exampleArray = examples.split("<br/>");
-    var shuffledArray = this.shuffle(exampleArray.slice(0,5));
+    var exampleArray = examples.split("<br/>").filter(s => s != "");
+    var shuffledArray = this.shuffle(exampleArray.slice(0, 5));
 
     return shuffledArray.join("</br>");
   }
@@ -50,6 +50,22 @@ class Track extends React.Component<Props> {
             border-bottom: 2px solid #ccc;
             border-top: 2px solid #ccc;
           }
+          .title {
+            position: sticky;
+            top: 75px;
+            background: #fff;
+            padding-bottom: 0;
+            margin-bottom: 2rem;
+          }
+          .title:after {
+            content: '';
+            position: absolute;
+            bottom: -2rem;
+            width: 100%;
+            height: 2rem;
+            display: block;
+            background: linear-gradient(to bottom, #ffffff, rgba(255,255,255,0));
+          }
           h2 {
             margin: 0 0 10px 0;
           }
@@ -58,28 +74,45 @@ class Track extends React.Component<Props> {
             padding-bottom: 20px;
             border-bottom: 2px solid #ccc;
           }
+          p.summary {
+            color: #111;
+            border-left: 7px solid #ffee00bb;
+            padding-left: 10px;
+            background: #ffee0028;
+            padding-top: 0.25em;
+            padding-bottom: 0.25em;
+            margin-bottom: 1.25em;
+          }
+          p.examples-title {
+            padding-bottom: 0.25em;
+            color: #666;
+          }
+          p.examples {
+            padding-left: 15px;
+            line-height: 1.5em;
+          }
           table {
             border-spacing: 3px;
           }
           td {
-            line-height: 50px;
+            line-height: 40px;
             width: 70px;
-            padding:5px;
+            padding: 10px;
             text-align: center;
-            background: #e35205;
-            color: #fff;
+            background: #eee;
             font-size: 16px;
             cursor: pointer;
           }
+          td:hover {
+            background: #e3520544;
+          }
           .td__selected {
             color: #000;
-            border: 2px solid #e35205;
-            background: #fff;
+            background: #e35205;
+            color: #fff;
           }
-
-          .td__unmet {
-            color: #000;
-            background: #eee;
+          .td__selected:hover {
+            background: #e35205;
           }
 
           ul {
@@ -88,19 +121,19 @@ class Track extends React.Component<Props> {
 
         `}</style>
 
-        <h2 title={track.movieQuote}>{track.displayName}</h2>
+        <h2 className="title" title={track.movieQuote}>{track.displayName}</h2>
 
-        <p style={{ marginLeft: 20}} dangerouslySetInnerHTML={{ __html: track.description }}></p>
-   
-        <div style={{display: 'flex', marginTop:25}}>
-          <table style={{flex: 0, marginRight: 50}}>
+        <p style={{ marginLeft: 20 }} dangerouslySetInnerHTML={{ __html: track.description }}></p>
+
+        <div style={{ display: 'flex', marginTop: 25 }}>
+          <table style={{ flex: 0, marginRight: 50 }}>
             <tbody>
               {milestones.slice().reverse().map((milestone) => {
                 const isMet = milestone <= currentMilestoneId
                 return milestone == 0 ? undefined : (
                   <tr key={milestone}>
                     <td onClick={() => this.props.handleTrackMilestoneChangeFn(this.props.trackId, milestone)}
-                      className={ milestone === currentMilestoneId ? 'td__selected' : (isMet ? '' : 'td__unmet')}>
+                      className={milestone === currentMilestoneId ? 'td__selected' : (isMet ? '' : 'td__unmet')}>
                       {milestone}
                     </td>
                   </tr>
@@ -109,23 +142,23 @@ class Track extends React.Component<Props> {
             </tbody>
           </table>
           {currentMilestone ? (
-            <div style={{flex: 1}}>
-              <h4 dangerouslySetInnerHTML={{ __html: currentMilestone.signals }}></h4>
-              <h5>Examples</h5>
-              <p style={{marginLeft:15}} dangerouslySetInnerHTML={{ __html: this.shuffleExamples(currentMilestone.examples) }}></p>
-            
-              <h4 dangerouslySetInnerHTML={{ __html: currentMilestone.advSignals }}></h4> 
-              <h5>Examples <i style={{fontSize:12}}>(Advanced)</i></h5>
-              <p style={{marginLeft:15}} dangerouslySetInnerHTML={{ __html: this.shuffleExamples(currentMilestone.advExamples) }}></p>
-
+            <div style={{ flex: 1 }}>
+              <h4>Level {currentMilestoneId} Core</h4>
+              <p className="summary" dangerouslySetInnerHTML={{ __html: currentMilestone.signals }}></p>
+              <p className="examples-title">Examples</p>
+              <p className="examples" dangerouslySetInnerHTML={{ __html: this.shuffleExamples(currentMilestone.examples) }}></p>
+              <h4>Level {currentMilestoneId} Advanced</h4>
+              <p className="summary" dangerouslySetInnerHTML={{ __html: currentMilestone.advSignals }}></p>
+              <p className="examples-title">Examples</p>
+              <p className="examples" dangerouslySetInnerHTML={{ __html: this.shuffleExamples(currentMilestone.advExamples) }}></p>
 
               <NewExample skill={track.displayName} level={currentMilestoneId} />
             </div>
-            
+
           ) : null}
         </div>
-        
-      </div>
+
+      </div >
     )
   }
 }
